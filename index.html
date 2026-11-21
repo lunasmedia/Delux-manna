@@ -215,11 +215,22 @@ blockquote.story-q{font-family:var(--serif);font-style:italic;font-size:1.3rem;c
 
 /* Reviews */
 .reviews{background:var(--surface)}
-.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.rev{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column;gap:16px}
-.stars{color:var(--gold);letter-spacing:3px}
-.rev q{font-family:var(--serif);font-size:1.12rem;line-height:1.45;quotes:"“" "”"}
-.rev footer{margin-top:auto;display:flex;justify-content:space-between;align-items:center;font-size:.84rem;color:var(--muted)}
+.gr-grid{columns:3 300px;column-gap:16px}
+.gr{break-inside:avoid;margin-bottom:16px;background:#202124;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:20px 22px;color:#e8eaed;font-family:var(--sans)}
+.gr-head{display:flex;align-items:center;gap:12px}
+.gr-head>div{flex:1;min-width:0}
+.gr-av{position:relative;flex:0 0 40px;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:1.05rem;color:#fff}
+.gr-lg{position:absolute;right:-2px;bottom:-2px;width:14px;height:14px;border-radius:50%;background:#f9ab00;border:2px solid #202124}
+.gr-name{display:block;font-size:.98rem;font-weight:700;color:#e8eaed}
+.gr-meta{display:block;font-size:.78rem;color:#9aa0a6;margin-top:1px}
+.gr-g{width:20px;height:20px;flex:0 0 20px}
+.gr-date{font-size:.8rem;color:#9aa0a6;margin-top:12px}
+.gr-visit{font-size:.8rem;color:#9aa0a6;margin-top:4px}
+.gr-visit span{margin:0 8px;opacity:.6}
+.gr-text{margin-top:12px;font-size:.95rem;line-height:1.55;color:#e8eaed}
+.gr-more{color:#9aa0a6}
+.gr-cta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:12px}
+.gr-cta small{color:var(--muted);font-size:.8rem}
 .themes{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
 .themes span{padding:8px 14px;border-radius:999px;border:1px solid var(--line);font-size:.85rem;font-weight:600}
 .themes span::before{content:"✦ ";color:var(--gold)}
@@ -350,7 +361,7 @@ form{display:flex;flex-direction:column;gap:16px}
   .hero-grid{min-height:0;padding:28px 22px 96px}
   .hero-visual{left:0;right:0}
   .hero-text{padding-left:0}
-  .cater-grid,.rev-grid{grid-template-columns:1fr}
+  .cater-grid{grid-template-columns:1fr}
   .foot-grid{grid-template-columns:1fr 1fr}
 }
 @media (max-width:720px){
@@ -662,11 +673,99 @@ form{display:flex;flex-direction:column;gap:16px}
       <span class="eyebrow">Guest praise</span>
       <h2>What keeps people <em>coming back.</em></h2>
     </div>
-    <div class="rev-grid">
-      <article class="rev reveal"><span class="stars" aria-label="5 stars">★★★★★</span><q>The ntaba was smoky and falling off the bone. Easily the best Congolese food I've had in London.</q><footer><span>Guest name</span><span class="badge b-ph">[Placeholder]</span></footer></article>
-      <article class="rev reveal"><span class="stars" aria-label="5 stars">★★★★★</span><q>Booked the Manna Platter for my sister's birthday. Huge portions, great cocktails, and the music had our whole table dancing.</q><footer><span>Guest name</span><span class="badge b-ph">[Placeholder]</span></footer></article>
-      <article class="rev reveal"><span class="stars" aria-label="5 stars">★★★★★</span><q>Busy on a Saturday, but the food was worth the wait. You can tell everything is cooked fresh.</q><footer><span>Guest name</span><span class="badge b-ph">[Placeholder]</span></footer></article>
+    <div class="gr-grid">
+      <article class="gr reveal">
+        <header class="gr-head">
+          <span class="gr-av" style="background:#c8643b" aria-hidden="true">C</span>
+          <div><b class="gr-name">Cyan King</b><small class="gr-meta">3 reviews</small></div>
+          <svg class="gr-g" viewBox="0 0 48 48" aria-label="Google review" role="img"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>
+        </header>
+        <p class="gr-date">Google review · Nov 2026</p>
+        <p class="gr-visit">Dinner<span>|</span>£30–40</p>
+        <p class="gr-text">Food was quality<br>Service was Top Tier<br>The Lady serving our table on Sunday night made the atmosphere 🤌🏿 <span class="gr-more">…</span></p>
+      </article>
+      <article class="gr reveal">
+        <header class="gr-head">
+          <span class="gr-av" style="background:#3f7d6e" aria-hidden="true">D</span>
+          <div><b class="gr-name">Daniel Plunkett</b><small class="gr-meta">5 reviews · 2 photos</small></div>
+          <svg class="gr-g" viewBox="0 0 48 48" aria-label="Google review" role="img"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>
+        </header>
+        <p class="gr-date">Google review · Oct 2026</p>
+        
+        <p class="gr-text">Thanks for the wings and Joloff, basically best chicken wings I&#x27;ve ever had.<br><br>I&#x27;ll be back with the family... <span class="gr-more">…</span></p>
+      </article>
+      <article class="gr reveal">
+        <header class="gr-head">
+          <span class="gr-av" style="background:#8a5fb0" aria-hidden="true">N<span class="gr-lg" aria-hidden="true"></span></span>
+          <div><b class="gr-name">Nné</b><small class="gr-meta">Local Guide · 153 reviews · 185 photos</small></div>
+          <svg class="gr-g" viewBox="0 0 48 48" aria-label="Google review" role="img"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>
+        </header>
+        <p class="gr-date">Google review · Aug 2026</p>
+        <p class="gr-visit">Dinner<span>|</span>£50–60</p>
+        <p class="gr-text">Amazing!<br><br>My friend and I were introduced to this cuisine at the Black Eats Festival this <span class="gr-more">…</span></p>
+      </article>
+      <article class="gr reveal">
+        <header class="gr-head">
+          <span class="gr-av" style="background:#b8862e" aria-hidden="true">S</span>
+          <div><b class="gr-name">S Nangs</b><small class="gr-meta">6 reviews · 3 photos</small></div>
+          <svg class="gr-g" viewBox="0 0 48 48" aria-label="Google review" role="img"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>
+        </header>
+        <p class="gr-date">Google review · Aug 2026</p>
+        <p class="gr-visit">Dinner<span>|</span>£30–40</p>
+        <p class="gr-text">I’ve been to Deluxe Manna five times now, but this is my first time leaving a review. As always, they never disappoint! The food is always 10/10, and the service is consistently on point. <span class="gr-more">…</span></p>
+      </article>
+      <article class="gr reveal">
+        <header class="gr-head">
+          <span class="gr-av" style="background:#4a6fa5" aria-hidden="true">H<span class="gr-lg" aria-hidden="true"></span></span>
+          <div><b class="gr-name">Hugo L</b><small class="gr-meta">Local Guide · 74 reviews · 20 photos</small></div>
+          <svg class="gr-g" viewBox="0 0 48 48" aria-label="Google review" role="img"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>
+        </header>
+        <p class="gr-date">Google review · Jul 2026</p>
+        <p class="gr-visit">Dinner<span>|</span>£10–20</p>
+        <p class="gr-text">Excellent goat curry with one of the best rice n&#x27; peas I&#x27;ve had: fragrant, with dessicated coconut and beans. The atmosphere is also perfect, and you know that this place has regulars with all the tables around us filled or about to be filled with reservations. Come here after a Tottenham Stadium event, like we did 😉 <span class="gr-more">…</span></p>
+      </article>
+      <article class="gr reveal">
+        <header class="gr-head">
+          <span class="gr-av" style="background:#a8453f" aria-hidden="true">A<span class="gr-lg" aria-hidden="true"></span></span>
+          <div><b class="gr-name">Alex D.</b><small class="gr-meta">Local Guide · 48 reviews · 55 photos</small></div>
+          <svg class="gr-g" viewBox="0 0 48 48" aria-label="Google review" role="img"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>
+        </header>
+        <p class="gr-date">Google review · Jun 2026</p>
+        
+        <p class="gr-text">Deluxe Manna is an absolute gem for authentic Congolese cuisine. The meat was incredibly tender and full of rich, bold flavour, the plantain was perfectly ripe and juicy, and the fried rice was honestly the best I&#x27;ve tasted, beautifully <span class="gr-more">…</span></p>
+      </article>
+      <article class="gr reveal">
+        <header class="gr-head">
+          <span class="gr-av" style="background:#5b8a3c" aria-hidden="true">R<span class="gr-lg" aria-hidden="true"></span></span>
+          <div><b class="gr-name">Rod de Souza</b><small class="gr-meta">Local Guide · 17 reviews · 22 photos</small></div>
+          <svg class="gr-g" viewBox="0 0 48 48" aria-label="Google review" role="img"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>
+        </header>
+        <p class="gr-date">Google review · May 2026</p>
+        <p class="gr-visit">Lunch<span>|</span>£80–90</p>
+        <p class="gr-text">I was treated by a couple of friends as a treat for my 70th birthday 👏🏼👏🏿💎 This is the first time I have tasted Congolese food 😋 I was very impressed by the food &amp; the spices.The rice,chicken wings and the plantain in particular graced my <span class="gr-more">…</span></p>
+      </article>
+      <article class="gr reveal">
+        <header class="gr-head">
+          <span class="gr-av" style="background:#c2577f" aria-hidden="true">S<span class="gr-lg" aria-hidden="true"></span></span>
+          <div><b class="gr-name">Sandy V</b><small class="gr-meta">Local Guide · 263 reviews · 2,565 photos</small></div>
+          <svg class="gr-g" viewBox="0 0 48 48" aria-label="Google review" role="img"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>
+        </header>
+        <p class="gr-date">Google review · Feb 2026</p>
+        <p class="gr-visit">£30–40</p>
+        <p class="gr-text">This is an amazing place to go with friends or family 👌🏾<br>The food is excellent, the people are great, the staff is amazing alway helpful and smiling, the playlist is so diverse that you feel the need to dance 👍🏾🎶🕺 <span class="gr-more">…</span></p>
+      </article>
+      <article class="gr reveal">
+        <header class="gr-head">
+          <span class="gr-av" style="background:#3d8a9a" aria-hidden="true">B<span class="gr-lg" aria-hidden="true"></span></span>
+          <div><b class="gr-name">Beverley Okoye</b><small class="gr-meta">Local Guide · 10 reviews · 10 photos</small></div>
+          <svg class="gr-g" viewBox="0 0 48 48" aria-label="Google review" role="img"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>
+        </header>
+        <p class="gr-date">Google review · Dec 2025</p>
+        <p class="gr-visit">Dinner<span>|</span>£40–50</p>
+        <p class="gr-text">The resturant was busy for a Thursday night in Tottenham! Thats when I knew the food would be good and we weren&#x27;t disappointed. The staff were really friendly and took time to explain the menu enabling us to have an authentic Congolese dining experience. The drinks were also 10 10! <span class="gr-more">…</span></p>
+      </article>
     </div>
+    <div class="gr-cta reveal"><a class="btn btn-ghost" href="https://www.google.com/search?q=Deluxe+Manna+Tottenham+reviews" target="_blank" rel="noopener">Read all reviews on Google <span aria-hidden="true">↗</span></a><small>Excerpts from public Google reviews, shown as written.</small></div>
     <div class="themes reveal">
       <span>Bold, authentic flavour</span><span>Generous portions</span><span>Strong cocktails</span><span>Vibrant weekend atmosphere</span>
     </div>
