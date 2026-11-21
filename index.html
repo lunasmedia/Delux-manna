@@ -1133,13 +1133,14 @@ form{display:flex;flex-direction:column;gap:16px}
   document.getElementById("hcPrev").addEventListener("click",function(){stop();go(idx-1)});
   document.getElementById("hcNext").addEventListener("click",function(){stop();go(idx+1)});
   track.addEventListener("keydown",function(e){if(e.key==="ArrowRight"){e.preventDefault();stop();go(idx+1)}if(e.key==="ArrowLeft"){e.preventDefault();stop();go(idx-1)}});
-  ["pointerdown","touchstart","wheel"].forEach(function(ev){track.addEventListener(ev,stop,{passive:true})});
+  track.addEventListener("touchstart",stop,{passive:true});
+  track.addEventListener("wheel",function(e){if(Math.abs(e.deltaX)>Math.abs(e.deltaY))stop()},{passive:true});
   function play(){if(stopped||reduce||timer)return;timer=setTimeout(function(){timer=null;go(idx+1);play()},+slides[idx].getAttribute("data-hold")||5000)}
   function pause(){clearTimeout(timer);timer=null}
-  function stop(){stopped=true;pause()}
+  var resumeT;
+  function stop(){pause();clearTimeout(resumeT);resumeT=setTimeout(play,8000)}
   var car=document.getElementById("heroCarousel").parentNode;
-  car.addEventListener("mouseenter",pause);car.addEventListener("mouseleave",play);
-  car.addEventListener("focusin",pause);car.addEventListener("focusout",play);
+  car.addEventListener("focusin",function(e){if(e.target.matches(".hc-btn,.hc-dot,#hcTrack"))stop()});
   document.addEventListener("visibilitychange",function(){document.hidden?pause():play()});
   window.addEventListener("resize",function(){track.scrollTo({left:idx*track.clientWidth})});
   mark();play();
