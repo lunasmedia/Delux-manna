@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deluxe Manna — Congolese, Pan-African & Caribbean Kitchen · Tottenham</title>
+<meta name="description" content="Family-run Congolese, Pan-African and Caribbean restaurant and cocktail lounge in Tottenham, North London. Book a table, order takeaway or enquire about event catering.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#150f0b; --surface:#1f1712; --surface-2:#2a1f18; --line:rgba(243,231,211,.12);
+  --terracotta:#c8643b; --terracotta-d:#a54d2a; --gold:#d6a446; --gold-soft:rgba(214,164,70,.14);
+  --cream:#f4e8d4; --muted:#bfae95; --vegan:#8fb36f; --danger:#e07a5f;
+  --serif:"Fraunces", Georgia, "Times New Roman", serif;
+  --sans:"Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --radius:18px; --max:1180px;
+  --kuba:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%23d6a446' stroke-width='1.4'%3E%3Cpath d='M0 28 L14 14 L28 28 L42 14 L56 28'/%3E%3Cpath d='M0 42 L14 28 L28 42 L42 28 L56 42'/%3E%3Cpath d='M28 0 L34 6 L28 12 L22 6Z'/%3E%3Cpath d='M0 0 L6 6 L0 12'/%3E%3Cpath d='M56 0 L50 6 L56 12'/%3E%3Ccircle cx='28' cy='50' r='2'/%3E%3C/g%3E%3C/svg%3E");
+}
+*{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{background:var(--bg);color:var(--cream);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer;background:none;border:0}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
+.eyebrow{font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:700}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.08;letter-spacing:-.01em}
+h2{font-size:clamp(2rem,4.2vw,3.1rem)}
+h2 em,h1 em{font-style:italic;color:var(--gold);font-weight:400}
+.lede{color:var(--muted);font-size:1.06rem;max-width:58ch}
+section{padding:96px 0;position:relative}
+.sec-head{display:flex;flex-direction:column;gap:14px;margin-bottom:44px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 24px;border-radius:999px;font-weight:700;font-size:.95rem;text-decoration:none;transition:transform .2s, background .2s, border-color .2s, color .2s;white-space:nowrap}
+.btn-primary{background:var(--terracotta);color:#fff8ef;box-shadow:0 8px 28px -10px rgba(200,100,59,.7)}
+.btn-primary:hover{background:var(--terracotta-d);transform:translateY(-2px)}
+.btn-ghost{border:1.5px solid rgba(244,232,212,.35);color:var(--cream)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.btn-gold{background:var(--gold);color:#1a120c}
+.btn-gold:hover{background:#e3b45a;transform:translateY(-2px)}
+.btn-sm{padding:10px 18px;font-size:.88rem}
+
+/* Nav */
+.nav{position:sticky;top:0;z-index:50;background:rgba(21,15,11,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:72px;gap:20px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-mark{width:38px;height:38px;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--gold),var(--terracotta) 70%);display:grid;place-items:center;font-family:var(--serif);font-weight:700;color:#1a120c;font-size:1.05rem}
+.logo-text{font-family:var(--serif);font-size:1.35rem;font-weight:600;letter-spacing:.01em}
+.logo-text i{color:var(--gold);font-weight:400}
+.nav-links{display:flex;gap:26px;list-style:none}
+.nav-links a{text-decoration:none;font-size:.9rem;font-weight:600;color:var(--muted);transition:color .2s}
+.nav-links a:hover{color:var(--cream)}
+.nav-cta{display:flex;align-items:center;gap:10px}
+.burger{display:none;width:44px;height:44px;border-radius:12px;border:1px solid var(--line);align-items:center;justify-content:center}
+.burger span,.burger span::before,.burger span::after{display:block;width:18px;height:2px;background:var(--cream);position:relative;transition:.25s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.nav.open .burger span{background:transparent}
+.nav.open .burger span::before{top:0;transform:rotate(45deg)}
+.nav.open .burger span::after{top:0;transform:rotate(-45deg)}
+.mobile-menu{display:none}
+
+/* Hero */
+.hero{padding:70px 0 0;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background-image:var(--kuba);opacity:.05;pointer-events:none}
+.hero::after{content:"";position:absolute;width:720px;height:720px;right:-220px;top:-160px;background:radial-gradient(circle,rgba(200,100,59,.28),transparent 62%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;position:relative;z-index:1}
+.hero h1{font-size:clamp(2.7rem,6.4vw,5.1rem);margin:18px 0 22px}
+.hero .lede{font-size:1.14rem}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin:32px 0 22px}
+.peak-chip{display:inline-flex;align-items:center;gap:10px;background:var(--gold-soft);border:1px solid rgba(214,164,70,.35);color:#f0cf8e;padding:8px 14px;border-radius:999px;font-size:.84rem;font-weight:600}
+.pulse{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 0 rgba(214,164,70,.7);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(214,164,70,0)}100%{box-shadow:0 0 0 0 rgba(214,164,70,0)}}
+.hero-visual{position:relative;aspect-ratio:4/5;max-height:600px}
+.plate{position:absolute;border-radius:28px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 60px -20px rgba(0,0,0,.7)}
+.plate-main{inset:0 0 14% 12%}
+.plate-small{width:46%;aspect-ratio:1;left:0;bottom:0;border-radius:50%;border:6px solid var(--bg)}
+.photo-slot{width:100%;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding:22px;position:relative;
+  background:
+   radial-gradient(circle at 30% 35%,rgba(214,164,70,.55),transparent 38%),
+   radial-gradient(circle at 70% 65%,rgba(200,100,59,.75),transparent 45%),
+   radial-gradient(circle at 55% 30%,rgba(120,60,30,.9),transparent 55%),
+   linear-gradient(160deg,#3a2419,#1b120d)}
+.photo-slot::before{content:"";position:absolute;inset:0;background-image:var(--kuba);opacity:.09}
+.photo-slot.alt{background:radial-gradient(circle at 50% 45%,rgba(143,179,111,.55),transparent 40%),radial-gradient(circle at 40% 60%,rgba(214,164,70,.5),transparent 45%),linear-gradient(200deg,#2d2116,#17100b)}
+.photo-slot.lounge{background:radial-gradient(circle at 20% 20%,rgba(214,164,70,.45),transparent 30%),radial-gradient(circle at 80% 30%,rgba(200,100,59,.5),transparent 30%),radial-gradient(circle at 50% 90%,rgba(120,50,90,.45),transparent 45%),linear-gradient(180deg,#22160f,#120c09)}
+.slot-tag{position:relative;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(244,232,212,.75);background:rgba(0,0,0,.35);padding:6px 10px;border-radius:999px;align-self:flex-start;backdrop-filter:blur(4px)}
+.hero-float{position:absolute;right:-6px;top:22px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 16px;display:flex;gap:12px;align-items:center;box-shadow:0 20px 40px -18px rgba(0,0,0,.8);z-index:2}
+.hero-float b{font-family:var(--serif);font-size:1.4rem;color:var(--gold)}
+.hero-float small{display:block;color:var(--muted);font-size:.78rem;line-height:1.3}
+.trust{margin-top:70px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(31,23,18,.6);position:relative;z-index:1}
+.trust ul{list-style:none;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px 28px;padding:20px 0}
+.trust li{display:flex;align-items:center;gap:10px;font-size:.9rem;font-weight:600;color:var(--cream)}
+.trust li::before{content:"◆";color:var(--terracotta);font-size:.6rem}
+
+/* Story */
+.story-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:64px;align-items:center}
+.story-visual{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.story-visual .plate{position:relative;aspect-ratio:3/4}
+.story-visual .plate:nth-child(2){margin-top:48px}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+.pillar{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+.pillar .ic{font-size:1.4rem;margin-bottom:10px;display:block}
+.pillar h3{font-size:1.1rem;margin-bottom:6px}
+.pillar p{font-size:.88rem;color:var(--muted);line-height:1.5}
+blockquote.story-q{font-family:var(--serif);font-style:italic;font-size:1.3rem;color:var(--cream);border-left:3px solid var(--terracotta);padding-left:18px;margin-top:26px}
+
+/* Menu */
+.menu-sec{background:linear-gradient(180deg,var(--bg),var(--surface) 30%,var(--surface) 70%,var(--bg))}
+.menu-controls{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:30px}
+.tabs{display:flex;gap:6px;background:var(--bg);border:1px solid var(--line);padding:6px;border-radius:999px;overflow-x:auto;scrollbar-width:none;max-width:100%}
+.tabs::-webkit-scrollbar{display:none}
+.tab{padding:10px 18px;border-radius:999px;font-weight:700;font-size:.88rem;color:var(--muted);white-space:nowrap;transition:.2s}
+.tab[aria-selected="true"]{background:var(--terracotta);color:#fff8ef}
+.tab:not([aria-selected="true"]):hover{color:var(--cream)}
+.diet-filters{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.diet-filters span{font-size:.8rem;color:var(--muted);margin-right:4px}
+.chip{padding:8px 14px;border-radius:999px;border:1.5px solid var(--line);font-size:.82rem;font-weight:700;color:var(--muted);transition:.2s}
+.chip[aria-pressed="true"]{border-color:var(--gold);color:var(--gold);background:var(--gold-soft)}
+.chip[data-diet="vegan"][aria-pressed="true"],.chip[data-diet="vegetarian"][aria-pressed="true"]{border-color:var(--vegan);color:var(--vegan);background:rgba(143,179,111,.12)}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.dish{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:flex;flex-direction:column;gap:10px;transition:transform .25s,border-color .25s;animation:fadeUp .4s both}
+.dish:hover{transform:translateY(-3px);border-color:rgba(214,164,70,.4)}
+.dish.feature{background:linear-gradient(150deg,rgba(200,100,59,.18),var(--bg) 60%);border-color:rgba(200,100,59,.4)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.dish-top{display:flex;justify-content:space-between;gap:14px;align-items:baseline}
+.dish h3{font-size:1.28rem}
+.dish .local{display:block;font-family:var(--sans);font-size:.78rem;font-weight:600;color:var(--gold);letter-spacing:.04em;margin-top:2px}
+.price{font-family:var(--serif);font-size:1.25rem;color:var(--gold);white-space:nowrap}
+.price.ask{font-family:var(--sans);font-size:.78rem;color:var(--muted);font-weight:600}
+.dish p{color:var(--muted);font-size:.92rem;line-height:1.5}
+.badges{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;padding-top:4px}
+.badge{font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 9px;border-radius:6px}
+.b-halal{background:var(--gold-soft);color:#f0cf8e}
+.b-vegan{background:rgba(143,179,111,.15);color:var(--vegan)}
+.b-veg{background:rgba(143,179,111,.1);color:#b5cf9e}
+.b-serves{background:rgba(200,100,59,.18);color:#f2a27f}
+.b-fish{background:rgba(120,170,200,.14);color:#a9cde0}
+.b-ph{border:1px dashed rgba(244,232,212,.3);color:var(--muted)}
+.empty{grid-column:1/-1;text-align:center;padding:40px;color:var(--muted);border:1px dashed var(--line);border-radius:var(--radius)}
+.menu-note{margin-top:22px;font-size:.85rem;color:var(--muted);display:flex;gap:10px;align-items:flex-start}
+
+/* Platters */
+.platter-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.platter{background:var(--surface);border:1px solid var(--line);border-radius:26px;overflow:hidden;display:flex;flex-direction:column}
+.platter .plate{position:relative;aspect-ratio:16/10;border-radius:0;border:0;box-shadow:none}
+.platter-body{padding:28px;display:flex;flex-direction:column;gap:14px;flex:1}
+.platter-body h3{font-size:1.75rem}
+.platter-body .row{display:flex;justify-content:space-between;align-items:baseline;gap:14px}
+.platter-body .price{font-size:1.7rem}
+.contents{display:flex;flex-wrap:wrap;gap:8px;list-style:none}
+.contents li{font-size:.84rem;padding:6px 12px;border:1px solid var(--line);border-radius:999px;color:var(--cream)}
+.per-head{font-size:.84rem;color:var(--muted)}
+.platter-body .btn{align-self:flex-start;margin-top:auto}
+.group-strip{margin-top:26px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;background:var(--gold-soft);border:1px solid rgba(214,164,70,.3);border-radius:var(--radius);padding:20px 24px}
+.group-strip p{font-weight:600}
+.group-strip p span{color:var(--muted);font-weight:500;display:block;font-size:.9rem}
+
+/* Lounge */
+.lounge{overflow:hidden}
+.lounge-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.lounge .plate{position:relative;aspect-ratio:5/4}
+.drink-list{list-style:none;margin-top:28px;display:flex;flex-direction:column}
+.drink-list li{display:flex;justify-content:space-between;gap:18px;padding:16px 0;border-bottom:1px dashed var(--line)}
+.drink-list b{font-family:var(--serif);font-size:1.15rem;font-weight:600}
+.drink-list small{display:block;color:var(--muted);font-size:.86rem}
+.drink-list .badge{align-self:center}
+.lounge-meta{display:flex;gap:28px;margin-top:28px;flex-wrap:wrap}
+.lounge-meta div b{display:block;font-family:var(--serif);font-size:1.6rem;color:var(--gold)}
+.lounge-meta div span{font-size:.84rem;color:var(--muted)}
+
+/* Order band */
+.order-band{padding:0}
+.order-card{background:linear-gradient(120deg,var(--terracotta-d),var(--terracotta) 55%,#d98a4a);border-radius:28px;padding:44px;display:grid;grid-template-columns:1.3fr 1fr;gap:30px;align-items:center;position:relative;overflow:hidden;color:#fff8ef}
+.order-card::before{content:"";position:absolute;inset:0;background-image:var(--kuba);opacity:.12;filter:brightness(3)}
+.order-card>*{position:relative}
+.order-card h2{font-size:clamp(1.8rem,3.4vw,2.6rem)}
+.order-card p{opacity:.9;margin-top:10px}
+.order-actions{display:flex;flex-direction:column;gap:12px}
+.order-actions .btn{background:#1a120c;color:var(--cream)}
+.order-actions .btn:hover{background:#000}
+.order-actions .btn.light{background:rgba(255,248,239,.15);border:1.5px solid rgba(255,248,239,.5)}
+.order-actions small{font-size:.8rem;opacity:.85;text-align:center}
+
+/* Catering */
+.cater-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:30px}
+.cater{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px;position:relative;overflow:hidden}
+.cater::after{content:"";position:absolute;right:-30px;bottom:-30px;width:120px;height:120px;background-image:var(--kuba);opacity:.08;border-radius:50%}
+.cater .num{font-family:var(--serif);font-style:italic;color:var(--terracotta);font-size:1.1rem}
+.cater h3{font-size:1.45rem;margin:8px 0}
+.cater p{color:var(--muted);font-size:.92rem}
+.cater-cta{display:flex;gap:14px;flex-wrap:wrap}
+
+/* Reviews */
+.reviews{background:var(--surface)}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rev{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column;gap:16px}
+.stars{color:var(--gold);letter-spacing:3px}
+.rev q{font-family:var(--serif);font-size:1.12rem;line-height:1.45;quotes:"“" "”"}
+.rev footer{margin-top:auto;display:flex;justify-content:space-between;align-items:center;font-size:.84rem;color:var(--muted)}
+.themes{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.themes span{padding:8px 14px;border-radius:999px;border:1px solid var(--line);font-size:.85rem;font-weight:600}
+.themes span::before{content:"✦ ";color:var(--gold)}
+
+/* FAQ */
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
+.faq-list{display:flex;flex-direction:column;gap:10px}
+.faq-item{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.faq-q{width:100%;text-align:left;padding:20px 22px;display:flex;justify-content:space-between;align-items:center;gap:16px;font-weight:700;font-size:1rem}
+.faq-q .plus{flex:none;width:28px;height:28px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:transform .3s,background .3s;color:var(--gold)}
+.faq-q[aria-expanded="true"] .plus{transform:rotate(45deg);background:var(--gold-soft)}
+.faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+.faq-a>div{overflow:hidden}
+.faq-a p{padding:0 22px 20px;color:var(--muted);font-size:.94rem}
+.faq-q[aria-expanded="true"]+.faq-a{grid-template-rows:1fr}
+.ph{color:#f0cf8e;font-weight:600}
+.help-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;margin-top:28px}
+.help-card h3{font-size:1.2rem;margin-bottom:6px}
+.help-card p{color:var(--muted);font-size:.9rem;margin-bottom:16px}
+
+/* Visit */
+.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.visit-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:30px}
+.visit-card h3{font-size:1.5rem;margin-bottom:16px}
+.hours{list-style:none}
+.hours li{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px dashed var(--line);font-size:.95rem;gap:10px}
+.hours li.peak b::after{content:"Lively evening";margin-left:10px;font-size:.66rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:6px;background:rgba(200,100,59,.2);color:#f2a27f;vertical-align:middle}
+.hours li.today{color:var(--gold)}
+.hours li.today span::after{content:" · Today";font-weight:700}
+.map-slot{margin-top:18px;height:170px;border-radius:14px;border:1px solid var(--line);background:repeating-linear-gradient(45deg,rgba(244,232,212,.03) 0 12px,transparent 12px 24px),var(--bg);display:grid;place-items:center;color:var(--muted);font-size:.85rem;text-align:center;padding:16px}
+.contact-list{list-style:none;display:flex;flex-direction:column;gap:14px;margin-bottom:22px}
+.contact-list li{display:flex;gap:14px;align-items:flex-start}
+.contact-list .ic{width:38px;height:38px;flex:none;border-radius:12px;background:var(--gold-soft);display:grid;place-items:center}
+.contact-list small{display:block;color:var(--muted);font-size:.8rem}
+
+footer.site{border-top:1px solid var(--line);padding:56px 0 110px;background:#100b08}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px}
+.foot-grid h4{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.foot-grid ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.foot-grid a{text-decoration:none;color:var(--muted);font-size:.92rem}
+.foot-grid a:hover{color:var(--cream)}
+.foot-grid p{color:var(--muted);font-size:.9rem;margin-top:14px;max-width:34ch}
+.foot-base{margin-top:40px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.8rem;color:var(--muted)}
+
+/* Mobile action bar */
+.action-bar{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:60;background:rgba(31,23,18,.94);backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:999px;padding:6px;gap:6px;box-shadow:0 20px 40px -10px rgba(0,0,0,.8)}
+.action-bar .btn{flex:1;padding:13px 10px}
+
+/* Modal */
+.modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:20px}
+.modal.open{display:flex}
+.modal-bg{position:absolute;inset:0;background:rgba(8,5,3,.78);backdrop-filter:blur(6px);animation:fade .25s}
+@keyframes fade{from{opacity:0}}
+.modal-box{position:relative;width:100%;max-width:640px;max-height:92vh;overflow-y:auto;background:var(--surface);border:1px solid var(--line);border-radius:26px;animation:pop .3s cubic-bezier(.2,.9,.3,1.2)}
+@keyframes pop{from{opacity:0;transform:translateY(20px) scale(.98)}}
+.modal-head{position:sticky;top:0;z-index:2;background:var(--surface);padding:22px 26px 0;border-bottom:1px solid var(--line)}
+.modal-head-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.modal-head h2{font-size:1.6rem}
+.close{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);font-size:1.2rem;display:grid;place-items:center}
+.close:hover{border-color:var(--gold);color:var(--gold)}
+.mtabs{display:flex;gap:24px}
+.mtab{padding:10px 0 14px;font-weight:700;color:var(--muted);border-bottom:2px solid transparent;font-size:.95rem}
+.mtab[aria-selected="true"]{color:var(--cream);border-color:var(--terracotta)}
+.modal-body{padding:24px 26px 28px}
+form{display:flex;flex-direction:column;gap:16px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label,.legend{font-size:.8rem;font-weight:700;color:var(--muted);letter-spacing:.03em}
+.field input,.field select,.field textarea{background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;color:var(--cream);font:inherit;font-size:.95rem;width:100%;transition:border-color .2s}
+.field textarea{min-height:84px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--gold)}
+.field input[type="date"]{color-scheme:dark}
+.field.err input,.field.err select{border-color:var(--danger)}
+.field .msg{font-size:.78rem;color:var(--danger);display:none}
+.field.err .msg{display:block}
+.dtype{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.dtype label{position:relative;cursor:pointer}
+.dtype input{position:absolute;opacity:0;pointer-events:none}
+.dtype .opt{display:flex;flex-direction:column;gap:2px;padding:14px;border-radius:14px;border:1.5px solid var(--line);background:var(--bg);height:100%;transition:.2s}
+.dtype .opt b{font-size:.92rem}
+.dtype .opt small{color:var(--muted);font-size:.76rem;line-height:1.35}
+.dtype input:checked+.opt{border-color:var(--terracotta);background:rgba(200,100,59,.12)}
+.dtype input:focus-visible+.opt{outline:2px solid var(--gold);outline-offset:2px}
+.dtype .opt .tag{font-size:.62rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:2px}
+.notice{display:none;gap:12px;padding:14px 16px;border-radius:14px;font-size:.88rem;line-height:1.5}
+.notice.show{display:flex}
+.notice.peak{background:var(--gold-soft);border:1px solid rgba(214,164,70,.35);color:#f3dcab}
+.notice.info{background:rgba(244,232,212,.05);border:1px solid var(--line);color:var(--muted)}
+.platter-pick{display:none;flex-direction:column;gap:10px;background:var(--bg);border:1px solid rgba(200,100,59,.35);border-radius:16px;padding:16px}
+.platter-pick.show{display:flex}
+.pp-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.pp-head b{font-family:var(--serif);font-size:1.1rem}
+.pp-head small{color:var(--muted);font-size:.8rem}
+.pp-row{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:10px 0;border-top:1px dashed var(--line)}
+.pp-row div small{display:block;color:var(--muted);font-size:.78rem}
+.stepper{display:flex;align-items:center;gap:4px;border:1px solid var(--line);border-radius:999px;padding:3px}
+.stepper button{width:32px;height:32px;border-radius:50%;font-size:1.1rem;font-weight:700}
+.stepper button:hover{background:var(--surface-2)}
+.stepper output{min-width:22px;text-align:center;font-weight:700}
+.pp-total{display:flex;justify-content:space-between;font-weight:700;padding-top:10px;border-top:1px solid var(--line)}
+.pp-total span:last-child{color:var(--gold);font-family:var(--serif);font-size:1.15rem}
+.form-foot{display:flex;flex-direction:column;gap:10px}
+.form-foot small{color:var(--muted);font-size:.78rem;text-align:center}
+.success{text-align:center;padding:10px 0;display:flex;flex-direction:column;align-items:center;gap:14px}
+.success .tick{width:72px;height:72px;border-radius:50%;background:rgba(143,179,111,.15);display:grid;place-items:center;font-size:2rem;color:var(--vegan)}
+.success h3{font-size:1.8rem}
+.success p{color:var(--muted);max-width:44ch}
+.summary{width:100%;text-align:left;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:16px 18px;list-style:none;font-size:.9rem}
+.summary li{display:flex;justify-content:space-between;gap:14px;padding:6px 0;border-bottom:1px dashed var(--line)}
+.summary li:last-child{border:0}
+.summary li span:first-child{color:var(--muted)}
+.proto{font-size:.74rem;color:var(--muted);border:1px dashed var(--line);padding:6px 10px;border-radius:8px}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* Responsive */
+@media (max-width:1020px){
+  .nav-links{display:none}
+  .burger{display:flex}
+  .nav .nav-cta .btn{display:none}
+  .mobile-menu{display:block;position:fixed;top:72px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line);padding:10px 22px 24px;transform:translateY(-12px);opacity:0;pointer-events:none;transition:.25s}
+  .nav.open .mobile-menu{transform:none;opacity:1;pointer-events:auto}
+  .mobile-menu a{display:block;padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;font-family:var(--serif);font-size:1.3rem}
+  .mobile-menu .btn{width:100%;margin-top:18px}
+  .hero-grid,.story-grid,.lounge-grid,.faq-grid{grid-template-columns:1fr;gap:44px}
+  .hero-visual{max-width:460px;width:100%;margin:0 auto}
+  .cater-grid,.rev-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:720px){
+  section{padding:72px 0}
+  .platter-grid,.visit-grid{grid-template-columns:1fr}
+  .pillars{grid-template-columns:1fr}
+  .order-card{grid-template-columns:1fr;padding:32px 24px}
+  .frow{grid-template-columns:1fr}
+  .dtype{grid-template-columns:1fr}
+  .action-bar{display:flex}
+  .modal{padding:0;align-items:flex-end}
+  .modal-box{max-height:94vh;border-radius:26px 26px 0 0}
+  .hero-float{right:0}
+  .menu-grid{grid-template-columns:1fr}
+  .trust ul{justify-content:flex-start}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="#top" class="logo" aria-label="Deluxe Manna home">
+      <span class="logo-mark" aria-hidden="true">M</span>
+      <span class="logo-text">Deluxe <i>Manna</i></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#platters">Sharing Platters</a></li>
+      <li><a href="#lounge">Drinks &amp; Lounge</a></li>
+      <li><a href="#catering">Catering</a></li>
+      <li><a href="#visit">Visit &amp; Hours</a></li>
+    </ul>
+    <div class="nav-cta">
+      <button class="btn btn-primary btn-sm" data-open="book">Book a Table</button>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+  <nav class="mobile-menu" aria-label="Mobile">
+    <a href="#menu">Menu</a>
+    <a href="#platters">Sharing Platters</a>
+    <a href="#lounge">Drinks &amp; Lounge</a>
+    <a href="#catering">Catering</a>
+    <a href="#visit">Visit &amp; Hours</a>
+    <button class="btn btn-primary" data-open="book">Book a Table</button>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Congolese · Pan-African · Caribbean — Tottenham N17</span>
+      <h1>Kinshasa soul,<br><em>slow-cooked</em> in Tottenham.</h1>
+      <p class="lede">A family-run kitchen and cocktail lounge serving smoky <strong>ntaba</strong> off the grill, rich Congolese stews, Caribbean favourites and platters made for the whole table, all to a soundtrack of Congolese rumba.</p>
+      <div class="hero-ctas">
+        <button class="btn btn-primary" data-open="book">Book a Table <span aria-hidden="true">→</span></button>
+        <a href="#menu" class="btn btn-ghost">Explore Menu</a>
+      </div>
+      <span class="peak-chip"><span class="pulse" aria-hidden="true"></span>Fri–Sun evenings fill fast. Book ahead to secure your table.</span>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="plate plate-main"><div class="photo-slot" style="justify-content:flex-start"><span class="slot-tag">Photo slot · Ntaba off the grill</span></div></div>
+      <div class="plate plate-small"><div class="photo-slot alt"><span class="slot-tag" style="margin:0 auto 18%">Pondu</span></div></div>
+      <div class="hero-float"><b>4</b><small>Sharing platters<br>serve up to four</small></div>
+    </div>
+  </div>
+  <div class="trust">
+    <ul class="wrap">
+      <li>Tottenham, North London</li>
+      <li>Family-Run</li>
+      <li>Halal, Vegan &amp; Vegetarian Options</li>
+      <li>Cocktails &amp; Late-Weekend Lounge</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ STORY ============ -->
+<section id="story">
+  <div class="wrap story-grid">
+    <div class="story-visual reveal" aria-hidden="true">
+      <div class="plate"><div class="photo-slot lounge"><span class="slot-tag">Photo slot · Lounge interior</span></div></div>
+      <div class="plate"><div class="photo-slot"><span class="slot-tag">Photo slot · The family</span></div></div>
+    </div>
+    <div class="reveal">
+      <div class="sec-head">
+        <span class="eyebrow">Our story &amp; atmosphere</span>
+        <h2>Recipes from home in the <em>DRC</em>, served like family.</h2>
+      </div>
+      <p class="lede">Deluxe Manna started with the dishes we grew up on: slow-grilled meats, cassava leaves simmered for hours, bread pounded from cassava. We cook every plate fresh to order, with the same patience and generosity as Sunday lunch back home.</p>
+      <p class="lede" style="margin-top:14px">The room pairs a modern lounge with warm African décor, and the music is Congolese, from classic rumba to today's ndombolo. Come for dinner and you might stay for the cocktails.</p>
+      <blockquote class="story-q">"Manna is food that arrives when you need it most. We want every table to leave full."<br><small style="font-family:var(--sans);font-style:normal;font-size:.8rem;color:var(--muted)">[Placeholder: swap in a real line from the family]</small></blockquote>
+      <div class="pillars">
+        <div class="pillar"><span class="ic" aria-hidden="true">🔥</span><h3>Fresh to order</h3><p>Nothing sits under a heat lamp. Good food takes a little time.</p></div>
+        <div class="pillar"><span class="ic" aria-hidden="true">🎶</span><h3>Lounge &amp; music</h3><p>Congolese rhythms, warm lighting and a proper cocktail bar.</p></div>
+        <div class="pillar"><span class="ic" aria-hidden="true">🌿</span><h3>Every diet welcome</h3><p>Halal meat plus vegan and vegetarian Congolese classics.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MENU ============ -->
+<section id="menu" class="menu-sec">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">The menu</span>
+      <h2>Bold flavours, <em>generous</em> plates.</h2>
+      <p class="lede">Filter by category or diet. Everything is cooked fresh to order, so tell us about allergies when you book.</p>
+    </div>
+    <div class="menu-controls">
+      <div class="tabs" role="tablist" aria-label="Menu categories">
+        <button class="tab" role="tab" aria-selected="true" data-cat="all">All</button>
+        <button class="tab" role="tab" aria-selected="false" data-cat="classics">Congolese &amp; Pan-African</button>
+        <button class="tab" role="tab" aria-selected="false" data-cat="platters">Sharing Platters</button>
+        <button class="tab" role="tab" aria-selected="false" data-cat="drinks">Drinks &amp; Cocktails</button>
+      </div>
+      <div class="diet-filters" role="group" aria-label="Dietary filters">
+        <span>Diet:</span>
+        <button class="chip" aria-pressed="false" data-diet="halal">Halal</button>
+        <button class="chip" aria-pressed="false" data-diet="vegan">Vegan</button>
+        <button class="chip" aria-pressed="false" data-diet="vegetarian">Vegetarian</button>
+      </div>
+    </div>
+    <div class="menu-grid" id="menuGrid" aria-live="polite"></div>
+    <p class="menu-note"><span aria-hidden="true">ⓘ</span><span>Prices in GBP. Dishes marked "Ask in-house" are priced on the day. Please tell your server about any allergies. Halal status and allergen info should be confirmed with the team.</span></p>
+  </div>
+</section>
+
+<!-- ============ PLATTERS ============ -->
+<section id="platters">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Sharing platters</span>
+      <h2>One table. One platter. <em>Everyone fed.</em></h2>
+      <p class="lede">Made for birthdays, catch-ups and big Friday nights. Pre-order with your booking and we'll have the grill ready when you sit down.</p>
+    </div>
+    <div class="platter-grid">
+      <article class="platter reveal">
+        <div class="plate"><div class="photo-slot"><span class="slot-tag">Photo slot · The Manna Platter</span></div></div>
+        <div class="platter-body">
+          <div class="row"><h3>The Manna Platter</h3><span class="price">£64.99</span></div>
+          <div class="badges" style="margin:0"><span class="badge b-serves">Serves up to 4</span><span class="badge b-halal">Halal</span></div>
+          <ul class="contents"><li>Smoked lamb</li><li>Lamb ribs</li><li>Chicken wings</li><li>Plantain</li><li>Rice</li></ul>
+          <span class="per-head">Works out from about £16.25 per person for four</span>
+          <button class="btn btn-primary" data-open="book" data-platter="manna">Book &amp; pre-order this platter</button>
+        </div>
+      </article>
+      <article class="platter reveal">
+        <div class="plate"><div class="photo-slot alt"><span class="slot-tag">Photo slot · The Caribbean Platter</span></div></div>
+        <div class="platter-body">
+          <div class="row"><h3>The Caribbean Platter</h3><span class="price">£59.99</span></div>
+          <div class="badges" style="margin:0"><span class="badge b-serves">Serves up to 4</span><span class="badge b-halal">Halal</span></div>
+          <ul class="contents"><li>Oxtail</li><li>Curry goat</li><li>Jerk chicken wings</li></ul>
+          <span class="per-head">Works out from about £15.00 per person for four</span>
+          <button class="btn btn-primary" data-open="book" data-platter="caribbean">Book &amp; pre-order this platter</button>
+        </div>
+      </article>
+    </div>
+    <div class="group-strip reveal">
+      <p>Coming as a group of 4 or more?<span>Choose "Group &amp; Platter Dining" when you book. We'll suggest platters for your party size and prep them ahead, which helps a lot on busy weekend nights.</span></p>
+      <button class="btn btn-gold" data-open="book" data-group="1">Book for a group</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOUNGE ============ -->
+<section id="lounge" class="lounge">
+  <div class="wrap lounge-grid">
+    <div class="reveal">
+      <div class="sec-head">
+        <span class="eyebrow">Drinks &amp; lounge</span>
+        <h2>Strong pours, warm lights, <em>rumba till late.</em></h2>
+      </div>
+      <p class="lede">Our bar mixes crafted cocktails with a full range of beers, wines and spirits. When the kitchen winds down on weekends, the lounge keeps going.</p>
+      <ul class="drink-list">
+        <li><div><b>Kin La Belle</b><small>Dark rum, passion fruit, ginger, lime</small></div><span class="badge b-ph">Placeholder</span></li>
+        <li><div><b>Congo River Sour</b><small>Bourbon, tamarind, citrus, egg-white foam</small></div><span class="badge b-ph">Placeholder</span></li>
+        <li><div><b>N17 Sunset</b><small>Tequila, mango, chilli salt rim</small></div><span class="badge b-ph">Placeholder</span></li>
+        <li><div><b>Bissap Spritz</b><small>Hibiscus, mint, soda (alcohol-free)</small></div><span class="badge b-ph">Placeholder</span></li>
+      </ul>
+      <div class="lounge-meta">
+        <div><b>Fri–Sun</b><span>Late-weekend lounge</span></div>
+        <div><b>Full bar</b><span>Cocktails, beer, wine &amp; spirits</span></div>
+      </div>
+    </div>
+    <div class="plate reveal" aria-hidden="true"><div class="photo-slot lounge"><span class="slot-tag">Photo slot · Bar &amp; cocktails</span></div></div>
+  </div>
+</section>
+
+<!-- ============ ORDER BAND ============ -->
+<section class="order-band" id="order">
+  <div class="wrap">
+    <div class="order-card reveal">
+      <div>
+        <span class="eyebrow" style="color:#fff3dc">Takeaway &amp; delivery</span>
+        <h2>Deluxe Manna, at home.</h2>
+        <p>The same dishes cooked fresh to order. At peak weekend times, please allow a little extra time for your food.</p>
+      </div>
+      <div class="order-actions">
+        <a href="#" class="btn" data-link="collection">Order for collection</a>
+        <a href="#" class="btn light" data-link="delivery">Order delivery</a>
+        <small>[Placeholder: link to your ordering platform]</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CATERING ============ -->
+<section id="catering">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Groups &amp; event catering</span>
+      <h2>Bring the <em>celebration</em> to us, or take us to it.</h2>
+      <p class="lede">From birthday tables to full event catering, we'll plan the food so you can enjoy the day.</p>
+    </div>
+    <div class="cater-grid">
+      <div class="cater reveal"><span class="num">01</span><h3>Birthdays &amp; occasions</h3><p>Reserve a group table, pre-order platters and tell us if there's a cake or a surprise to plan for.</p></div>
+      <div class="cater reveal"><span class="num">02</span><h3>Group nights out</h3><p>Dinner into cocktails into the lounge. We'll seat you together and keep the platters coming.</p></div>
+      <div class="cater reveal"><span class="num">03</span><h3>Private event catering</h3><p>Weddings, christenings, community and corporate events. Congolese, Pan-African and Caribbean menus built around your guest list.</p></div>
+    </div>
+    <div class="cater-cta reveal">
+      <button class="btn btn-primary" data-open="cater">Enquire about catering</button>
+      <button class="btn btn-ghost" data-open="book" data-group="1">Book a group table</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Guest praise</span>
+      <h2>What keeps people <em>coming back.</em></h2>
+    </div>
+    <div class="rev-grid">
+      <article class="rev reveal"><span class="stars" aria-label="5 stars">★★★★★</span><q>The ntaba was smoky and falling off the bone. Easily the best Congolese food I've had in London.</q><footer><span>Guest name</span><span class="badge b-ph">[Placeholder]</span></footer></article>
+      <article class="rev reveal"><span class="stars" aria-label="5 stars">★★★★★</span><q>Booked the Manna Platter for my sister's birthday. Huge portions, great cocktails, and the music had our whole table dancing.</q><footer><span>Guest name</span><span class="badge b-ph">[Placeholder]</span></footer></article>
+      <article class="rev reveal"><span class="stars" aria-label="5 stars">★★★★★</span><q>Busy on a Saturday, but the food was worth the wait. You can tell everything is cooked fresh.</q><footer><span>Guest name</span><span class="badge b-ph">[Placeholder]</span></footer></article>
+    </div>
+    <div class="themes reveal">
+      <span>Bold, authentic flavour</span><span>Generous portions</span><span>Strong cocktails</span><span>Vibrant weekend atmosphere</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq">
+  <div class="wrap faq-grid">
+    <div class="reveal">
+      <div class="sec-head">
+        <span class="eyebrow">Good to know</span>
+        <h2>Before you <em>visit.</em></h2>
+        <p class="lede">The practical things, answered up front so there are no surprises on the night.</p>
+      </div>
+      <div class="help-card">
+        <h3>Still got a question?</h3>
+        <p>Call or message the team and we'll help with bookings, dietary needs or big parties.</p>
+        <button class="btn btn-primary btn-sm" data-open="book">Book a Table</button>
+      </div>
+    </div>
+    <div class="faq-list reveal" id="faqList">
+      <div class="faq-item"><button class="faq-q" aria-expanded="true">Do I need to book on Friday, Saturday or Sunday evenings?<span class="plus" aria-hidden="true">+</span></button><div class="faq-a"><div><p>We strongly recommend it. Fri–Sun evenings are our busiest times and walk-in tables can't be guaranteed. Booking ahead secures your spot, and we hold tables for <span class="ph">[Placeholder: 15 minutes]</span> after the booking time.</p></div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Why might my food take a little longer?<span class="plus" aria-hidden="true">+</span></button><div class="faq-a"><div><p>Every dish is cooked fresh to order, and grilled meats like ntaba need time. On busy weekend evenings, allow around <span class="ph">[Placeholder: 30–45 minutes]</span> for mains. Pre-ordering a platter when you book is the quickest way to eat soon after you sit down.</p></div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Is your meat Halal? What about vegan and vegetarian options?<span class="plus" aria-hidden="true">+</span></button><div class="faq-a"><div><p>Our meat dishes are marked Halal on the menu. For vegan and vegetarian guests, Congolese classics like pondu (cassava leaves), epinard (spinach) and kwanga (cassava bread) are full of flavour. Use the menu filters, and tell us about allergies when you book.</p></div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">How do group bookings work?<span class="plus" aria-hidden="true">+</span></button><div class="faq-a"><div><p>For 4 or more guests, choose "Group &amp; Platter Dining" in the booking form. You can pre-order sharing platters (each serves up to 4) so the kitchen can prepare ahead. For parties over <span class="ph">[Placeholder: 12]</span>, or to hire the space, send a catering enquiry.</p></div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Is there a service charge?<span class="plus" aria-hidden="true">+</span></button><div class="faq-a"><div><p><span class="ph">[Placeholder: e.g. "A discretionary 12.5% service charge is added for tables of 6 or more. It goes to our team in full and you can ask for it to be removed."]</span> We show this in the booking form so you know before you arrive.</p></div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Can we split the bill?<span class="plus" aria-hidden="true">+</span></button><div class="faq-a"><div><p><span class="ph">[Placeholder: your bill-splitting policy, e.g. "Happy to split for up to 6 card payments per table".]</span> Letting your server know at the start helps on busy nights.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VISIT ============ -->
+<section id="visit" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Visit &amp; hours</span>
+      <h2>Find us in <em>Tottenham.</em></h2>
+    </div>
+    <div class="visit-grid">
+      <div class="visit-card reveal">
+        <h3>Opening hours</h3>
+        <ul class="hours" id="hours">
+          <li data-day="1"><span>Monday</span><b>[Placeholder] 12:00 – 22:00</b></li>
+          <li data-day="2"><span>Tuesday</span><b>[Placeholder] 12:00 – 22:00</b></li>
+          <li data-day="3"><span>Wednesday</span><b>[Placeholder] 12:00 – 22:00</b></li>
+          <li data-day="4"><span>Thursday</span><b>[Placeholder] 12:00 – 23:00</b></li>
+          <li data-day="5" class="peak"><span>Friday</span><b>12:00 – late</b></li>
+          <li data-day="6" class="peak"><span>Saturday</span><b>12:00 – late</b></li>
+          <li data-day="0" class="peak"><span>Sunday</span><b>12:00 – late</b></li>
+        </ul>
+      </div>
+      <div class="visit-card reveal">
+        <h3>Contact &amp; location</h3>
+        <ul class="contact-list">
+          <li><span class="ic" aria-hidden="true">📍</span><div>[Placeholder] Street address, Tottenham, London N17<small>Nearest transport: [Placeholder]</small></div></li>
+          <li><span class="ic" aria-hidden="true">📞</span><div>[Placeholder] 020 0000 0000<small>Bookings &amp; enquiries</small></div></li>
+          <li><span class="ic" aria-hidden="true">✉️</span><div>[Placeholder] hello@deluxemanna.co.uk<small>Catering &amp; events</small></div></li>
+        </ul>
+        <div class="map-slot">Map embed slot<br>[Placeholder: Google Maps iframe]</div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="#top" class="logo"><span class="logo-mark" aria-hidden="true">M</span><span class="logo-text">Deluxe <i>Manna</i></span></a>
+        <p>Family-run Congolese, Pan-African &amp; Caribbean kitchen and cocktail lounge in Tottenham, North London.</p>
+      </div>
+      <div><h4>Explore</h4><ul><li><a href="#menu">Menu</a></li><li><a href="#platters">Sharing Platters</a></li><li><a href="#lounge">Drinks &amp; Lounge</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+      <div><h4>Plan</h4><ul><li><a href="#" data-open="book">Book a Table</a></li><li><a href="#order">Takeaway &amp; Delivery</a></li><li><a href="#" data-open="cater">Event Catering</a></li><li><a href="#visit">Visit &amp; Hours</a></li></ul></div>
+      <div><h4>Follow</h4><ul><li><a href="#">Instagram [Placeholder]</a></li><li><a href="#">TikTok [Placeholder]</a></li><li><a href="#">Facebook [Placeholder]</a></li></ul></div>
+    </div>
+    <div class="foot-base"><span>© <span id="yr"></span> Deluxe Manna · Tottenham, London</span><span>Website prototype: placeholders marked for replacement</span></div>
+  </div>
+</footer>
+
+<!-- Mobile action bar -->
+<div class="action-bar" aria-label="Quick actions">
+  <button class="btn btn-primary" data-open="book">Book a Table</button>
+  <a href="#order" class="btn btn-ghost">Order</a>
+</div>
+
+<!-- ============ MODAL ============ -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-bg" data-close></div>
+  <div class="modal-box">
+    <div class="modal-head">
+      <div class="modal-head-row">
+        <h2 id="modalTitle">Reserve &amp; enquire</h2>
+        <button class="close" data-close aria-label="Close">✕</button>
+      </div>
+      <div class="mtabs" role="tablist">
+        <button class="mtab" role="tab" aria-selected="true" data-pane="book">Book a Table</button>
+        <button class="mtab" role="tab" aria-selected="false" data-pane="cater">Catering Enquiry</button>
+      </div>
+    </div>
+    <div class="modal-body">
+
+      <!-- BOOKING -->
+      <div data-panel="book">
+        <form id="bookForm" novalidate>
+          <div class="frow">
+            <div class="field"><label for="bDate">Date</label><input type="date" id="bDate" required><span class="msg">Please choose a date.</span></div>
+            <div class="field"><label for="bTime">Time</label><select id="bTime" required></select><span class="msg">Please choose a time.</span></div>
+          </div>
+          <div class="field"><label for="bGuests">Guests</label><select id="bGuests"></select></div>
+
+          <div class="notice peak" id="peakNotice"><span aria-hidden="true">🔥</span><span id="peakText"></span></div>
+
+          <div>
+            <span class="legend">Dining type</span>
+            <div class="dtype" style="margin-top:8px">
+              <label><input type="radio" name="dtype" value="standard" checked><span class="opt"><b>Standard</b><small>À la carte from the full menu</small></span></label>
+              <label><input type="radio" name="dtype" value="group"><span class="opt"><span class="tag">Recommended for 4+</span><b>Group &amp; Platter</b><small>Pre-order platters, ready when you arrive</small></span></label>
+              <label><input type="radio" name="dtype" value="celebration"><span class="opt"><b>Celebration</b><small>Birthday or occasion, tell us the plan</small></span></label>
+            </div>
+          </div>
+
+          <div class="platter-pick" id="platterPick">
+            <div class="pp-head"><b>Pre-order sharing platters</b><small id="ppHint"></small></div>
+            <div class="pp-row"><div>The Manna Platter<small>£64.99 · serves up to 4</small></div><div class="stepper"><button type="button" data-step="-1" data-p="manna" aria-label="Fewer Manna Platters">−</button><output id="q-manna">0</output><button type="button" data-step="1" data-p="manna" aria-label="More Manna Platters">+</button></div></div>
+            <div class="pp-row"><div>The Caribbean Platter<small>£59.99 · serves up to 4</small></div><div class="stepper"><button type="button" data-step="-1" data-p="caribbean" aria-label="Fewer Caribbean Platters">−</button><output id="q-caribbean">0</output><button type="button" data-step="1" data-p="caribbean" aria-label="More Caribbean Platters">+</button></div></div>
+            <div class="pp-total"><span>Platter pre-order</span><span id="ppTotal">£0.00</span></div>
+          </div>
+
+          <div class="notice info" id="serviceNotice"><span aria-hidden="true">ⓘ</span><span>[Placeholder] For tables of 6 or more, a discretionary service charge of 12.5% is added to the bill. You can ask for it to be adjusted or removed.</span></div>
+
+          <div class="frow">
+            <div class="field"><label for="bName">Full name</label><input id="bName" autocomplete="name" required><span class="msg">Please enter your name.</span></div>
+            <div class="field"><label for="bPhone">Mobile</label><input id="bPhone" type="tel" autocomplete="tel" required><span class="msg">Please enter a valid UK number.</span></div>
+          </div>
+          <div class="field"><label for="bEmail">Email</label><input id="bEmail" type="email" autocomplete="email" required><span class="msg">Please enter a valid email.</span></div>
+          <div class="field"><label for="bNotes">Dietary needs, allergies or occasion details (optional)</label><textarea id="bNotes" placeholder="e.g. 2 vegan guests, nut allergy, it's Mum's 50th!"></textarea></div>
+
+          <div class="form-foot">
+            <button type="submit" class="btn btn-primary">Request booking</button>
+            <small>You'll get a confirmation by text and email. Everything is cooked fresh to order.</small>
+          </div>
+        </form>
+        <div class="success" id="bookSuccess" hidden></div>
+      </div>
+
+      <!-- CATERING -->
+      <div data-panel="cater" hidden>
+        <form id="caterForm" novalidate>
+          <div class="frow">
+            <div class="field"><label for="cName">Full name</label><input id="cName" autocomplete="name" required><span class="msg">Please enter your name.</span></div>
+            <div class="field"><label for="cPhone">Phone</label><input id="cPhone" type="tel" autocomplete="tel" required><span class="msg">Please enter a valid phone number.</span></div>
+          </div>
+          <div class="field"><label for="cEmail">Email</label><input id="cEmail" type="email" autocomplete="email" required><span class="msg">Please enter a valid email.</span></div>
+          <div class="frow">
+            <div class="field"><label for="cType">Event type</label>
+              <select id="cType" required>
+                <option value="">Choose…</option><option>Birthday party</option><option>Wedding</option><option>Christening / dedication</option><option>Corporate event</option><option>Community / church event</option><option>Private hire at Deluxe Manna</option><option>Other</option>
+              </select><span class="msg">Please choose an event type.</span></div>
+            <div class="field"><label for="cDate">Event date</label><input type="date" id="cDate" required><span class="msg">Please choose a date.</span></div>
+          </div>
+          <div class="frow">
+            <div class="field"><label for="cGuests">Approx. guests</label><input id="cGuests" type="number" min="10" step="5" placeholder="e.g. 60" required><span class="msg">Please enter a guest count (10+).</span></div>
+            <div class="field"><label for="cStyle">Service style</label>
+              <select id="cStyle"><option>Buffet / sharing trays</option><option>Platters to the table</option><option>Drop-off catering</option><option>Not sure yet</option></select></div>
+          </div>
+          <div class="field"><label for="cMsg">Tell us about the event</label><textarea id="cMsg" placeholder="Venue, cuisines you'd like (Congolese, Caribbean, mixed), dietary needs, budget…"></textarea></div>
+          <div class="form-foot">
+            <button type="submit" class="btn btn-primary">Send enquiry</button>
+            <small>We aim to reply within [Placeholder: 2 working days] with menu ideas and a quote.</small>
+          </div>
+        </form>
+        <div class="success" id="caterSuccess" hidden></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+(() => {
+  const $ = (s, el = document) => el.querySelector(s);
+  const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+  const gbp = n => "£" + n.toFixed(2);
+
+  /* ---------- Menu data ---------- */
+  const MENU = [
+    { cat:"classics", name:"Ntaba", local:"Slow-grilled smoked baby lamb", desc:"Our signature. Baby lamb smoked and grilled low and slow until it pulls away from the bone.", price:17.50, tags:["halal"], feature:true },
+    { cat:"classics", name:"Liboke ya Ngolo", local:"Steamed spicy catfish", desc:"Catfish wrapped and steamed with chilli, onion and aromatics so it stays tender and full of flavour.", price:14.99, tags:["fish"] },
+    { cat:"classics", name:"Poulet Mayo", local:"Kinshasa-style chicken", desc:"A Congolese favourite: seasoned chicken cooked until golden, made for sharing.", price:26.50, tags:["halal"] },
+    { cat:"classics", name:"Pondu", local:"Cassava leaves stew", desc:"Cassava leaves simmered for hours into a deep, savoury green stew. A taste of home.", price:10.99, tags:["vegan"] },
+    { cat:"classics", name:"Epinard", local:"Congolese spinach", desc:"Spinach slow-cooked with onion, tomato and spice. A great side or main.", price:null, tags:["vegan"] },
+    { cat:"classics", name:"Kwanga", local:"Cassava bread", desc:"Fermented cassava bread, the classic Congolese partner for stews and grilled meats.", price:null, tags:["vegan"] },
+    { cat:"classics", name:"Jollof Rice", local:"Pan-African classic", desc:"Smoky tomato rice, a staple side for any table.", price:7.49, tags:[] },
+    { cat:"platters", name:"The Manna Platter", local:"Ideal for groups", desc:"Smoked lamb, lamb ribs, chicken wings, plantain and rice.", price:64.99, tags:["halal","serves"], feature:true },
+    { cat:"platters", name:"The Caribbean Platter", local:"Ideal for groups", desc:"Oxtail, curry goat and jerk chicken wings.", price:59.99, tags:["halal","serves"] },
+    { cat:"drinks", name:"Kin La Belle", local:"Signature cocktail", desc:"Dark rum, passion fruit, ginger, lime.", price:null, tags:["ph"] },
+    { cat:"drinks", name:"Congo River Sour", local:"Signature cocktail", desc:"Bourbon, tamarind, citrus, egg-white foam.", price:null, tags:["ph"] },
+    { cat:"drinks", name:"N17 Sunset", local:"Signature cocktail", desc:"Tequila, mango, chilli salt rim.", price:null, tags:["ph"] },
+    { cat:"drinks", name:"Bissap Spritz", local:"Alcohol-free", desc:"Hibiscus, mint and soda.", price:null, tags:["vegan","ph"] },
+    { cat:"drinks", name:"Full Bar", local:"Beers, wines & spirits", desc:"A full selection of beers, wines and spirits. Ask your server what's on.", price:null, tags:[] }
+  ];
+  const BADGE = { halal:["b-halal","Halal"], vegan:["b-vegan","Vegan"], vegetarian:["b-veg","Vegetarian"], serves:["b-serves","Serves 4"], fish:["b-fish","Fish"], ph:["b-ph","Placeholder"] };
+
+  let cat = "all";
+  const diets = new Set();
+  const matchesDiet = d => {
+    for (const f of diets) {
+      if (f === "vegetarian" && !(d.tags.includes("vegetarian") || d.tags.includes("vegan"))) return false;
+      if (f !== "vegetarian" && !d.tags.includes(f)) return false;
+    }
+    return true;
+  };
+  function renderMenu(){
+    const grid = $("#menuGrid");
+    const items = MENU.filter(d => (cat === "all" || d.cat === cat) && matchesDiet(d));
+    if (!items.length){ grid.innerHTML = `<div class="empty">No dishes match that combination. Try removing a filter.</div>`; return; }
+    grid.innerHTML = items.map((d,i) => `
+      <article class="dish${d.feature ? " feature" : ""}" style="animation-delay:${i*35}ms">
+        <div class="dish-top"><h3>${d.name}<span class="local">${d.local}</span></h3>
+          ${d.price != null ? `<span class="price">${gbp(d.price)}</span>` : `<span class="price ask">${d.tags.includes("ph") ? "Price TBC" : "Ask in-house"}</span>`}
+        </div>
+        <p>${d.desc}</p>
+        <div class="badges">${d.tags.map(t => `<span class="badge ${BADGE[t][0]}">${BADGE[t][1]}</span>`).join("")}</div>
+        ${d.cat === "platters" ? `<button class="btn btn-ghost btn-sm" style="align-self:flex-start;margin-top:6px" data-open="book" data-platter="${d.name.includes("Manna") ? "manna" : "caribbean"}">Pre-order with booking</button>` : ""}
+      </article>`).join("");
+  }
+  $$(".tab").forEach(t => t.addEventListener("click", () => {
+    $$(".tab").forEach(x => x.setAttribute("aria-selected", x === t));
+    cat = t.dataset.cat; renderMenu();
+  }));
+  $$(".chip").forEach(c => c.addEventListener("click", () => {
+    const on = c.getAttribute("aria-pressed") !== "true";
+    c.setAttribute("aria-pressed", on);
+    on ? diets.add(c.dataset.diet) : diets.delete(c.dataset.diet);
+    renderMenu();
+  }));
+  renderMenu();
+
+  /* ---------- Nav ---------- */
+  const nav = $("#nav"), burger = $("#burger");
+  burger.addEventListener("click", () => {
+    const open = nav.classList.toggle("open");
+    burger.setAttribute("aria-expanded", open);
+  });
+  $$(".mobile-menu a").forEach(a => a.addEventListener("click", () => { nav.classList.remove("open"); burger.setAttribute("aria-expanded", false); }));
+
+  /* ---------- FAQ ---------- */
+  $$(".faq-q").forEach(q => q.addEventListener("click", () => {
+    q.setAttribute("aria-expanded", q.getAttribute("aria-expanded") !== "true");
+  }));
+
+  /* ---------- Hours: highlight today ---------- */
+  const today = new Date().getDay();
+  const row = $(`#hours li[data-day="${today}"]`); if (row) row.classList.add("today");
+  $("#yr").textContent = new Date().getFullYear();
+
+  /* ---------- Reveal on scroll ---------- */
+  if ("IntersectionObserver" in window){
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold:.12 });
+    $$(".reveal").forEach(el => io.observe(el));
+  } else $$(".reveal").forEach(el => el.classList.add("in"));
+
+  /* ---------- Placeholder order links ---------- */
+  $$("[data-link]").forEach(a => a.addEventListener("click", e => { e.preventDefault(); a.textContent = "Link coming soon"; setTimeout(() => a.textContent = a.dataset.link === "collection" ? "Order for collection" : "Order delivery", 1600); }));
+
+  /* ---------- Modal ---------- */
+  const modal = $("#modal");
+  let lastFocus = null;
+  const PRICES = { manna:64.99, caribbean:59.99 };
+  const qty = { manna:0, caribbean:0 };
+
+  // populate selects
+  const timeSel = $("#bTime");
+  timeSel.innerHTML = `<option value="">Choose…</option>` + Array.from({length:21}, (_,i) => {
+    const m = 12*60 + i*30, h = String(Math.floor(m/60)).padStart(2,"0"), mm = String(m%60).padStart(2,"0");
+    return `<option>${h}:${mm}</option>`;
+  }).join("");
+  const guestSel = $("#bGuests");
+  guestSel.innerHTML = Array.from({length:12}, (_,i) => `<option value="${i+1}">${i+1} ${i ? "guests" : "guest"}</option>`).join("") + `<option value="13">13+ (large party)</option>`;
+  guestSel.value = "2";
+  const iso = d => d.toISOString().slice(0,10);
+  const now = new Date(); $("#bDate").min = iso(now); $("#cDate").min = iso(now);
+
+  function setPane(p){
+    $$(".mtab").forEach(t => t.setAttribute("aria-selected", t.dataset.pane === p));
+    $$("[data-panel]").forEach(el => el.hidden = el.dataset.panel !== p);
+  }
+  $$(".mtab").forEach(t => t.addEventListener("click", () => setPane(t.dataset.pane)));
+
+  function openModal(pane, opts = {}){
+    lastFocus = document.activeElement;
+    nav.classList.remove("open");
+    setPane(pane);
+    if (pane === "book"){
+      resetSuccess("book");
+      if (opts.platter){
+        if (+guestSel.value < 4) guestSel.value = "4";
+        setDtype("group");
+        qty.manna = qty.caribbean = 0;
+        qty[opts.platter] = Math.max(1, Math.ceil(+guestSel.value / 4) - (opts.platter === "manna" ? 0 : 0));
+      } else if (opts.group){
+        if (+guestSel.value < 4) guestSel.value = "6";
+        setDtype("group");
+      }
+      updateBooking();
+    } else resetSuccess("cater");
+    modal.classList.add("open");
+    document.body.style.overflow = "hidden";
+    setTimeout(() => { const f = $("[data-panel]:not([hidden]) input, [data-panel]:not([hidden]) select", modal); f && f.focus(); }, 60);
+  }
+  function closeModal(){
+    modal.classList.remove("open");
+    document.body.style.overflow = "";
+    lastFocus && lastFocus.focus && lastFocus.focus();
+  }
+  document.addEventListener("click", e => {
+    const o = e.target.closest("[data-open]");
+    if (o){ e.preventDefault(); openModal(o.dataset.open, { platter:o.dataset.platter, group:o.dataset.group }); }
+    if (e.target.closest("[data-close]")) closeModal();
+  });
+  document.addEventListener("keydown", e => {
+    if (!modal.classList.contains("open")) return;
+    if (e.key === "Escape") closeModal();
+    if (e.key === "Tab"){
+      const f = $$("button, input, select, textarea, a[href]", modal).filter(el => !el.closest("[hidden]") && el.offsetParent !== null);
+      if (!f.length) return;
+      const first = f[0], last = f[f.length-1];
+      if (e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+    }
+  });
+
+  /* ---------- Booking logic ---------- */
+  const dtype = () => $('input[name="dtype"]:checked').value;
+  const setDtype = v => { $(`input[name="dtype"][value="${v}"]`).checked = true; };
+  let userTouchedDtype = false;
+  $$('input[name="dtype"]').forEach(r => r.addEventListener("change", () => { userTouchedDtype = true; updateBooking(); }));
+
+  function updateBooking(){
+    const g = +guestSel.value;
+    const dateVal = $("#bDate").value, timeVal = timeSel.value;
+    // auto-suggest group dining for 4+
+    if (g >= 4 && dtype() === "standard" && !userTouchedDtype) setDtype("group");
+    if (g < 4 && dtype() === "group" && !userTouchedDtype) setDtype("standard");
+
+    // Peak notice
+    const peak = $("#peakNotice"), txt = $("#peakText");
+    let show = false;
+    if (dateVal){
+      const day = new Date(dateVal + "T12:00").getDay();
+      const weekend = day === 5 || day === 6 || day === 0;
+      const evening = timeVal && +timeVal.slice(0,2) >= 18;
+      if (weekend){
+        show = true;
+        txt.innerHTML = evening
+          ? "<strong>Weekend evening, our busiest time.</strong> Every dish is cooked fresh, so mains can take a little longer. Pre-order a platter below to eat sooner after you sit down. We hold tables for [Placeholder: 15 min]."
+          : "<strong>Weekends get busy.</strong> Dishes are cooked fresh to order, so allow a little extra time. Booking ahead is a smart move.";
+      }
+    }
+    peak.classList.toggle("show", show);
+
+    // Platter picker
+    const pick = $("#platterPick");
+    const isGroup = dtype() === "group" || dtype() === "celebration";
+    pick.classList.toggle("show", isGroup);
+    const suggested = Math.max(1, Math.ceil(Math.min(g, 12) / 4));
+    $("#ppHint").textContent = g >= 4 ? `We suggest ${suggested} platter${suggested > 1 ? "s" : ""} for ${g >= 13 ? "12+" : g}` : "Each serves up to 4";
+    $("#q-manna").textContent = qty.manna;
+    $("#q-caribbean").textContent = qty.caribbean;
+    $("#ppTotal").textContent = gbp(qty.manna*PRICES.manna + qty.caribbean*PRICES.caribbean);
+
+    // Service charge note
+    $("#serviceNotice").classList.toggle("show", g >= 6);
+  }
+  [guestSel, timeSel, $("#bDate")].forEach(el => el.addEventListener("change", updateBooking));
+  $$(".stepper button").forEach(b => b.addEventListener("click", () => {
+    const p = b.dataset.p; qty[p] = Math.max(0, Math.min(10, qty[p] + +b.dataset.step)); updateBooking();
+  }));
+
+  /* ---------- Validation ---------- */
+  const validators = {
+    email: v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v),
+    tel: v => v.replace(/[^\d+]/g,"").length >= 10
+  };
+  function validate(form){
+    let ok = true, firstBad = null;
+    $$("[required]", form).forEach(el => {
+      const v = el.value.trim();
+      let good = !!v;
+      if (good && el.type === "email") good = validators.email(v);
+      if (good && el.type === "tel") good = validators.tel(v);
+      if (good && el.type === "number") good = +v >= +(el.min || 0);
+      el.closest(".field").classList.toggle("err", !good);
+      if (!good){ ok = false; firstBad = firstBad || el; }
+    });
+    firstBad && firstBad.focus();
+    return ok;
+  }
+  $$("input, select", modal).forEach(el => el.addEventListener("input", () => el.closest(".field") && el.closest(".field").classList.remove("err")));
+
+  const fmtDate = v => new Date(v + "T12:00").toLocaleDateString("en-GB", { weekday:"long", day:"numeric", month:"long" });
+  const esc = s => s.replace(/[&<>"']/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
+
+  $("#bookForm").addEventListener("submit", e => {
+    e.preventDefault();
+    if (!validate(e.target)) return;
+    const g = guestSel.options[guestSel.selectedIndex].text;
+    const types = { standard:"Standard", group:"Group & Platter Dining", celebration:"Celebration" };
+    const platters = [qty.manna && `${qty.manna} × Manna Platter`, qty.caribbean && `${qty.caribbean} × Caribbean Platter`].filter(Boolean).join(", ");
+    const box = $("#bookSuccess");
+    box.innerHTML = `
+      <div class="tick" aria-hidden="true">✓</div>
+      <h3>Request received, ${esc($("#bName").value.trim().split(" ")[0])}!</h3>
+      <p>We'll confirm your table by text and email shortly. Can't wait to feed you.</p>
+      <ul class="summary">
+        <li><span>When</span><span>${fmtDate($("#bDate").value)} · ${timeSel.value}</span></li>
+        <li><span>Party</span><span>${g}</span></li>
+        <li><span>Dining</span><span>${types[dtype()]}</span></li>
+        ${platters ? `<li><span>Pre-ordered</span><span>${platters}</span></li><li><span>Platter total</span><span>${$("#ppTotal").textContent}</span></li>` : ""}
+      </ul>
+      <span class="proto">Prototype: no booking has actually been sent.</span>
+      <button class="btn btn-ghost btn-sm" data-close>Done</button>`;
+    e.target.hidden = true; box.hidden = false;
+  });
+
+  $("#caterForm").addEventListener("submit", e => {
+    e.preventDefault();
+    if (!validate(e.target)) return;
+    const box = $("#caterSuccess");
+    box.innerHTML = `
+      <div class="tick" aria-hidden="true">✓</div>
+      <h3>Thanks, ${esc($("#cName").value.trim().split(" ")[0])}!</h3>
+      <p>Our events team will be in touch with menu ideas and a quote for your ${esc($("#cType").value.toLowerCase())}.</p>
+      <ul class="summary">
+        <li><span>Date</span><span>${fmtDate($("#cDate").value)}</span></li>
+        <li><span>Guests</span><span>~${esc($("#cGuests").value)}</span></li>
+        <li><span>Style</span><span>${esc($("#cStyle").value)}</span></li>
+      </ul>
+      <span class="proto">Prototype: no enquiry has actually been sent.</span>
+      <button class="btn btn-ghost btn-sm" data-close>Done</button>`;
+    e.target.hidden = true; box.hidden = false;
+  });
+
+  function resetSuccess(which){
+    const form = which === "book" ? $("#bookForm") : $("#caterForm");
+    const box = which === "book" ? $("#bookSuccess") : $("#caterSuccess");
+    if (!box.hidden){ form.reset(); form.hidden = false; box.hidden = true;
+      if (which === "book"){ guestSel.value = "2"; qty.manna = qty.caribbean = 0; userTouchedDtype = false; } }
+  }
+})();
+</script>
+</body>
+</html>
