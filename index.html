@@ -93,17 +93,13 @@ section{padding:96px 0;position:relative}
 .mobile-menu{display:none}
 
 /* Hero */
-.hero{padding:70px 0 0;overflow:hidden}
-.hero::before{content:"";position:absolute;inset:0;background-image:var(--kuba);opacity:.05;pointer-events:none}
-.hero::after{content:"";position:absolute;width:720px;height:720px;right:-220px;top:-160px;background:radial-gradient(circle,rgba(200,100,59,.28),transparent 62%);pointer-events:none}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;position:relative;z-index:1}
+.hero{padding:0;overflow:hidden}
 .hero h1{font-size:clamp(2.7rem,6.4vw,5.1rem);margin:18px 0 22px}
 .hero .lede{font-size:1.14rem}
 .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin:32px 0 22px}
 .peak-chip{display:inline-flex;align-items:center;gap:10px;background:var(--gold-soft);border:1px solid rgba(214,164,70,.35);color:var(--gold-text);padding:8px 14px;border-radius:999px;font-size:.84rem;font-weight:600}
 .pulse{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 0 rgba(214,164,70,.7);animation:pulse 2s infinite}
 @keyframes pulse{70%{box-shadow:0 0 0 10px rgba(214,164,70,0)}100%{box-shadow:0 0 0 0 rgba(214,164,70,0)}}
-.hero-visual{position:relative;aspect-ratio:4/5;max-height:600px}
 .plate{position:absolute;border-radius:28px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 60px -20px var(--shadow-c)}
 .photo-slot{width:100%;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding:22px;position:relative;
   background:
@@ -116,10 +112,7 @@ section{padding:96px 0;position:relative}
 .photo-slot.alt{background:radial-gradient(circle at 50% 45%,rgba(143,179,111,.55),transparent 40%),radial-gradient(circle at 40% 60%,rgba(214,164,70,.5),transparent 45%),linear-gradient(200deg,#2d2116,#17100b)}
 .photo-slot.lounge{background:radial-gradient(circle at 20% 20%,rgba(214,164,70,.45),transparent 30%),radial-gradient(circle at 80% 30%,rgba(200,100,59,.5),transparent 30%),radial-gradient(circle at 50% 90%,rgba(120,50,90,.45),transparent 45%),linear-gradient(180deg,#22160f,#120c09)}
 .slot-tag{position:relative;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:#f4e8d4bf;background:rgba(0,0,0,.35);padding:6px 10px;border-radius:999px;align-self:flex-start;backdrop-filter:blur(4px)}
-.hero-float{position:absolute;right:-6px;top:22px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 16px;display:flex;gap:12px;align-items:center;box-shadow:0 20px 40px -18px var(--shadow-c);z-index:2}
-.hero-float b{font-family:var(--serif);font-size:1.4rem;color:var(--gold)}
-.hero-float small{display:block;color:var(--muted);font-size:.78rem;line-height:1.3}
-.trust{margin-top:70px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--trust-bg);position:relative;z-index:1}
+.trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--trust-bg);position:relative;z-index:1}
 .trust ul{list-style:none;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px 28px;padding:20px 0}
 .trust li{display:flex;align-items:center;gap:10px;font-size:.9rem;font-weight:600;color:var(--cream)}
 .trust li::before{content:"◆";color:var(--terracotta);font-size:.6rem}
@@ -355,8 +348,7 @@ form{display:flex;flex-direction:column;gap:16px}
   .nav.open .mobile-menu{transform:none;opacity:1;pointer-events:auto}
   .mobile-menu a{display:block;padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;font-family:var(--serif);font-size:1.3rem}
   .mobile-menu .btn{width:100%;margin-top:18px}
-  .hero-grid,.story-grid,.lounge-grid,.faq-grid{grid-template-columns:1fr;gap:44px}
-  .hero-visual{max-width:460px;width:100%;margin:0 auto}
+  .story-grid,.lounge-grid,.faq-grid{grid-template-columns:1fr;gap:44px}
   .cater-grid,.rev-grid{grid-template-columns:1fr}
   .foot-grid{grid-template-columns:1fr 1fr}
 }
@@ -370,7 +362,6 @@ form{display:flex;flex-direction:column;gap:16px}
   .action-bar{display:flex}
   .modal{padding:0;align-items:flex-end}
   .modal-box{max-height:94vh;border-radius:26px 26px 0 0}
-  .hero-float{right:0}
   .menu-grid{grid-template-columns:1fr}
   .trust ul{justify-content:flex-start}
 }
@@ -381,22 +372,41 @@ form{display:flex;flex-direction:column;gap:16px}
 }
 
 /* Hero carousel */
-.hero-carousel{position:absolute;inset:0;border-radius:28px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 60px -20px var(--shadow-c);background:#1b120d}
+.hero-stage{position:relative;height:min(86vh,780px);min-height:600px;display:flex;align-items:center;
+  /* text sits on photos, so keep the dark-theme colours here in both themes */
+  --cream:#f4e8d4;--muted:#e2d5bf;--gold:#e0b257;--gold-text:#f3d697;--gold-soft:rgba(214,164,70,.2);--tint:244,232,212;--line:rgba(244,232,212,.18)}
+.hero-carousel{position:absolute;inset:0;overflow:hidden;background:#1b120d}
+.hero-shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(12,8,5,.88) 0%,rgba(12,8,5,.7) 38%,rgba(12,8,5,.2) 68%,rgba(12,8,5,0) 85%),linear-gradient(to top,rgba(12,8,5,.6),transparent 30%)}
+.hero-copy{position:relative;z-index:2;width:100%;pointer-events:none;color:var(--cream)}
+.hero-copy-in{max-width:620px;padding:40px 0 70px}
+.hero-copy a,.hero-copy button{pointer-events:auto}
+.hero-copy .lede{color:var(--muted);text-shadow:0 1px 12px rgba(0,0,0,.4)}
+.hero-copy h1{text-shadow:0 2px 24px rgba(0,0,0,.35)}
+.peak-chip{backdrop-filter:blur(6px)}
 .hc-track{display:flex;height:100%;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
 .hc-track::-webkit-scrollbar{display:none}
 .hc-track:focus-visible{outline:2px solid var(--gold);outline-offset:-4px}
 .hc-slide{flex:0 0 100%;height:100%;scroll-snap-align:start;scroll-snap-stop:always;position:relative;margin:0}
 .hc-slide img{width:100%;height:100%;object-fit:cover;display:block}
-.hc-slide::after{content:"";position:absolute;inset:auto 0 0 0;height:38%;background:linear-gradient(to top,rgba(12,8,5,.7),transparent);pointer-events:none}
-.hc-slide figcaption{position:absolute;left:20px;bottom:66px;z-index:1;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:#f4e8d4;background:rgba(0,0,0,.4);padding:6px 11px;border-radius:999px;backdrop-filter:blur(4px)}
-.hc-controls{position:absolute;left:20px;right:20px;bottom:18px;display:flex;align-items:center;justify-content:space-between;z-index:2}
+.hc-slide figcaption{position:absolute;right:max(22px,calc((100% - var(--max))/2 + 22px));bottom:76px;z-index:1;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:#f4e8d4;background:rgba(0,0,0,.4);padding:6px 11px;border-radius:999px;backdrop-filter:blur(4px)}
+.hc-controls{position:absolute;left:auto;right:max(22px,calc((100% - var(--max))/2 + 22px));bottom:22px;gap:18px;display:flex;align-items:center;justify-content:space-between;z-index:2}
 .hc-dots{display:flex;gap:6px}
 .hc-dot{width:8px;height:8px;border-radius:999px;background:rgba(244,232,212,.45);transition:width .3s,background .3s}
 .hc-dot[aria-current="true"]{width:26px;background:var(--gold-fill)}
 .hc-arrows{display:flex;gap:8px}
-.hc-btn{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;color:#f4e8d4;background:rgba(0,0,0,.4);border:1px solid rgba(244,232,212,.3);backdrop-filter:blur(4px);transition:background .2s,border-color .2s}
+.hc-btn{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:#f4e8d4;background:rgba(0,0,0,.4);border:1px solid rgba(244,232,212,.3);backdrop-filter:blur(4px);transition:background .2s,border-color .2s}
 .hc-btn:hover{background:rgba(0,0,0,.6);border-color:var(--gold-fill)}
 .hc-btn svg{width:18px;height:18px}
+
+@media (max-width:720px){
+  .hero-stage{height:auto;min-height:calc(100svh - 72px);align-items:flex-end}
+  .hero-shade{background:linear-gradient(to top,rgba(12,8,5,.92) 0%,rgba(12,8,5,.78) 45%,rgba(12,8,5,.25) 80%,rgba(12,8,5,.1) 100%)}
+  .hero-copy-in{padding:120px 0 96px}
+  .hc-controls{left:22px;right:22px;top:18px;bottom:auto;justify-content:space-between}
+  .hc-btn{width:40px;height:40px}
+  .hc-slide figcaption{display:none}
+  .hero-copy-in{padding:100px 0 110px}
+}
 
 /* Theme toggle */
 .theme-toggle{width:44px;height:44px;border-radius:12px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--cream);transition:border-color .2s,color .2s}
@@ -447,50 +457,50 @@ form{display:flex;flex-direction:column;gap:16px}
 
 <!-- ============ HERO ============ -->
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <span class="eyebrow">Congolese · Pan-African · Caribbean — Tottenham N17</span>
-      <h1>Kinshasa soul,<br><em>slow-cooked</em> in Tottenham.</h1>
-      <p class="lede">A family-run kitchen and cocktail lounge serving smoky <strong>ntaba</strong> off the grill, rich Congolese stews, Caribbean favourites and platters made for the whole table, all to a soundtrack of Congolese rumba.</p>
-      <div class="hero-ctas">
-        <button class="btn btn-primary" data-open="book">Book a Table <span aria-hidden="true">→</span></button>
-        <a href="#menu" class="btn btn-ghost">Explore Menu</a>
+  <div class="hero-stage">
+    <div class="hero-carousel" id="heroCarousel" role="region" aria-roledescription="carousel" aria-label="Photos from Deluxe Manna">
+      <div class="hc-track" id="hcTrack" tabindex="0">
+        <figure class="hc-slide" role="group" aria-roledescription="slide" aria-label="1 of 5">
+          <img src="images/dining-table.jpg" alt="Dining room with gold-striped walls, teal velvet booth and a table of shared dishes" fetchpriority="high" style="object-position:50% 62%">
+          <figcaption>The dining room</figcaption>
+        </figure>
+        <figure class="hc-slide" role="group" aria-roledescription="slide" aria-label="2 of 5">
+          <img src="images/manna-platter.jpg" alt="The Manna Platter with lamb ribs, grilled meat, glazed wings, plantain, jollof and fried rice" loading="lazy" style="object-position:50% 50%">
+          <figcaption>The Manna Platter</figcaption>
+        </figure>
+        <figure class="hc-slide" role="group" aria-roledescription="slide" aria-label="3 of 5">
+          <img src="images/ribs-jollof-plantain.jpg" alt="Glazed grilled ribs with jollof rice and fried plantain" loading="lazy" style="object-position:50% 40%">
+          <figcaption>Off the grill</figcaption>
+        </figure>
+        <figure class="hc-slide" role="group" aria-roledescription="slide" aria-label="4 of 5">
+          <img src="images/grilled-chop-wide.jpg" alt="Pan-seared chop topped with peppers and mushroom sauce" loading="lazy" style="object-position:50% 50%">
+          <figcaption>From the kitchen</figcaption>
+        </figure>
+        <figure class="hc-slide" role="group" aria-roledescription="slide" aria-label="5 of 5">
+          <img src="images/cocktail.jpg" alt="Tall orange cocktail garnished with pineapple and orange" loading="lazy" style="object-position:50% 45%">
+          <figcaption>Cocktails &amp; lounge</figcaption>
+        </figure>
       </div>
-      <span class="peak-chip"><span class="pulse" aria-hidden="true"></span>Fri–Sun evenings fill fast. Book ahead to secure your table.</span>
+      <div class="hc-controls">
+        <div class="hc-dots" id="hcDots"></div>
+        <div class="hc-arrows">
+          <button class="hc-btn" id="hcPrev" type="button" aria-label="Previous photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button class="hc-btn" id="hcNext" type="button" aria-label="Next photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+      </div>
     </div>
-    <div class="hero-visual">
-      <div class="hero-carousel" id="heroCarousel" role="region" aria-roledescription="carousel" aria-label="Photos from Deluxe Manna">
-        <div class="hc-track" id="hcTrack" tabindex="0">
-          <figure class="hc-slide" role="group" aria-roledescription="slide" aria-label="1 of 5">
-            <img src="images/dining-table.jpg" alt="Dining room with gold-striped walls, teal velvet booth and a table of shared dishes" fetchpriority="high" style="object-position:50% 70%">
-            <figcaption>The dining room</figcaption>
-          </figure>
-          <figure class="hc-slide" role="group" aria-roledescription="slide" aria-label="2 of 5">
-            <img src="images/manna-platter.jpg" alt="The Manna Platter with lamb ribs, grilled meat, glazed wings, plantain, jollof and fried rice" loading="lazy" style="object-position:50% 50%">
-            <figcaption>The Manna Platter</figcaption>
-          </figure>
-          <figure class="hc-slide" role="group" aria-roledescription="slide" aria-label="3 of 5">
-            <img src="images/ribs-jollof-plantain.jpg" alt="Glazed grilled ribs with jollof rice and fried plantain" loading="lazy" style="object-position:50% 40%">
-            <figcaption>Off the grill</figcaption>
-          </figure>
-          <figure class="hc-slide" role="group" aria-roledescription="slide" aria-label="4 of 5">
-            <img src="images/grilled-chop.jpg" alt="Pan-seared chop topped with peppers and mushroom sauce" loading="lazy" style="object-position:68% 60%">
-            <figcaption>From the kitchen</figcaption>
-          </figure>
-          <figure class="hc-slide" role="group" aria-roledescription="slide" aria-label="5 of 5">
-            <img src="images/cocktail.jpg" alt="Tall orange cocktail garnished with pineapple and orange" loading="lazy" style="object-position:50% 45%">
-            <figcaption>Cocktails &amp; lounge</figcaption>
-          </figure>
+    <div class="hero-shade" aria-hidden="true"></div>
+    <div class="wrap hero-copy">
+      <div class="hero-copy-in">
+        <span class="eyebrow">Congolese · Pan-African · Caribbean — Tottenham N17</span>
+        <h1>Kinshasa soul,<br><em>slow-cooked</em> in Tottenham.</h1>
+        <p class="lede">A family-run kitchen and cocktail lounge serving smoky <strong>ntaba</strong> off the grill, rich Congolese stews, Caribbean favourites and platters made for the whole table, all to a soundtrack of Congolese rumba.</p>
+        <div class="hero-ctas">
+          <button class="btn btn-primary" data-open="book">Book a Table <span aria-hidden="true">→</span></button>
+          <a href="#menu" class="btn btn-ghost">Explore Menu</a>
         </div>
-        <div class="hc-controls">
-          <div class="hc-dots" id="hcDots"></div>
-          <div class="hc-arrows">
-            <button class="hc-btn" id="hcPrev" type="button" aria-label="Previous photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-            <button class="hc-btn" id="hcNext" type="button" aria-label="Next photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          </div>
-        </div>
+        <span class="peak-chip"><span class="pulse" aria-hidden="true"></span>Fri–Sun evenings fill fast. Book ahead to secure your table.</span>
       </div>
-      <div class="hero-float" aria-hidden="true"><b>4</b><small>Sharing platters<br>serve up to four</small></div>
     </div>
   </div>
   <div class="trust">
