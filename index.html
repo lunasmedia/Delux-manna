@@ -105,8 +105,6 @@ section{padding:96px 0;position:relative}
 @keyframes pulse{70%{box-shadow:0 0 0 10px rgba(214,164,70,0)}100%{box-shadow:0 0 0 0 rgba(214,164,70,0)}}
 .hero-visual{position:relative;aspect-ratio:4/5;max-height:600px}
 .plate{position:absolute;border-radius:28px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 60px -20px var(--shadow-c)}
-.plate-main{inset:0 0 14% 12%}
-.plate-small{width:46%;aspect-ratio:1;left:0;bottom:0;border-radius:50%;border:6px solid var(--bg)}
 .photo-slot{width:100%;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding:22px;position:relative;
   background:
    radial-gradient(circle at 30% 35%,rgba(214,164,70,.55),transparent 38%),
@@ -382,6 +380,24 @@ form{display:flex;flex-direction:column;gap:16px}
   .reveal{opacity:1;transform:none}
 }
 
+/* Hero carousel */
+.hero-carousel{position:absolute;inset:0;border-radius:28px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 60px -20px var(--shadow-c);background:#1b120d}
+.hc-track{display:flex;height:100%;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
+.hc-track::-webkit-scrollbar{display:none}
+.hc-track:focus-visible{outline:2px solid var(--gold);outline-offset:-4px}
+.hc-slide{flex:0 0 100%;height:100%;scroll-snap-align:start;scroll-snap-stop:always;position:relative;margin:0}
+.hc-slide img{width:100%;height:100%;object-fit:cover;display:block}
+.hc-slide::after{content:"";position:absolute;inset:auto 0 0 0;height:38%;background:linear-gradient(to top,rgba(12,8,5,.7),transparent);pointer-events:none}
+.hc-slide figcaption{position:absolute;left:20px;bottom:66px;z-index:1;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:#f4e8d4;background:rgba(0,0,0,.4);padding:6px 11px;border-radius:999px;backdrop-filter:blur(4px)}
+.hc-controls{position:absolute;left:20px;right:20px;bottom:18px;display:flex;align-items:center;justify-content:space-between;z-index:2}
+.hc-dots{display:flex;gap:6px}
+.hc-dot{width:8px;height:8px;border-radius:999px;background:rgba(244,232,212,.45);transition:width .3s,background .3s}
+.hc-dot[aria-current="true"]{width:26px;background:var(--gold-fill)}
+.hc-arrows{display:flex;gap:8px}
+.hc-btn{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;color:#f4e8d4;background:rgba(0,0,0,.4);border:1px solid rgba(244,232,212,.3);backdrop-filter:blur(4px);transition:background .2s,border-color .2s}
+.hc-btn:hover{background:rgba(0,0,0,.6);border-color:var(--gold-fill)}
+.hc-btn svg{width:18px;height:18px}
+
 /* Theme toggle */
 .theme-toggle{width:44px;height:44px;border-radius:12px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--cream);transition:border-color .2s,color .2s}
 .theme-toggle:hover{border-color:var(--gold);color:var(--gold)}
@@ -442,10 +458,39 @@ form{display:flex;flex-direction:column;gap:16px}
       </div>
       <span class="peak-chip"><span class="pulse" aria-hidden="true"></span>Fri–Sun evenings fill fast. Book ahead to secure your table.</span>
     </div>
-    <div class="hero-visual" aria-hidden="true">
-      <div class="plate plate-main"><img class="photo" src="images/dining-table.jpg" alt="" fetchpriority="high" style="object-position:50% 70%"></div>
-      <div class="plate plate-small"><img class="photo" src="images/grilled-chop.jpg" alt="" style="object-position:68% 60%"></div>
-      <div class="hero-float"><b>4</b><small>Sharing platters<br>serve up to four</small></div>
+    <div class="hero-visual">
+      <div class="hero-carousel" id="heroCarousel" role="region" aria-roledescription="carousel" aria-label="Photos from Deluxe Manna">
+        <div class="hc-track" id="hcTrack" tabindex="0">
+          <figure class="hc-slide" role="group" aria-roledescription="slide" aria-label="1 of 5">
+            <img src="images/dining-table.jpg" alt="Dining room with gold-striped walls, teal velvet booth and a table of shared dishes" fetchpriority="high" style="object-position:50% 70%">
+            <figcaption>The dining room</figcaption>
+          </figure>
+          <figure class="hc-slide" role="group" aria-roledescription="slide" aria-label="2 of 5">
+            <img src="images/manna-platter.jpg" alt="The Manna Platter with lamb ribs, grilled meat, glazed wings, plantain, jollof and fried rice" loading="lazy" style="object-position:50% 50%">
+            <figcaption>The Manna Platter</figcaption>
+          </figure>
+          <figure class="hc-slide" role="group" aria-roledescription="slide" aria-label="3 of 5">
+            <img src="images/ribs-jollof-plantain.jpg" alt="Glazed grilled ribs with jollof rice and fried plantain" loading="lazy" style="object-position:50% 40%">
+            <figcaption>Off the grill</figcaption>
+          </figure>
+          <figure class="hc-slide" role="group" aria-roledescription="slide" aria-label="4 of 5">
+            <img src="images/grilled-chop.jpg" alt="Pan-seared chop topped with peppers and mushroom sauce" loading="lazy" style="object-position:68% 60%">
+            <figcaption>From the kitchen</figcaption>
+          </figure>
+          <figure class="hc-slide" role="group" aria-roledescription="slide" aria-label="5 of 5">
+            <img src="images/cocktail.jpg" alt="Tall orange cocktail garnished with pineapple and orange" loading="lazy" style="object-position:50% 45%">
+            <figcaption>Cocktails &amp; lounge</figcaption>
+          </figure>
+        </div>
+        <div class="hc-controls">
+          <div class="hc-dots" id="hcDots"></div>
+          <div class="hc-arrows">
+            <button class="hc-btn" id="hcPrev" type="button" aria-label="Previous photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <button class="hc-btn" id="hcNext" type="button" aria-label="Next photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+        </div>
+      </div>
+      <div class="hero-float" aria-hidden="true"><b>4</b><small>Sharing platters<br>serve up to four</small></div>
     </div>
   </div>
   <div class="trust">
@@ -1081,6 +1126,30 @@ form{display:flex;flex-direction:column;gap:16px}
   btn.addEventListener("click",function(){var t=current()==="dark"?"light":"dark";root.dataset.theme=t;try{localStorage.setItem("dm-theme",t)}catch(e){}sync()});
   if(mq.addEventListener)mq.addEventListener("change",sync);
   sync();
+})();
+</script>
+<script>
+(function(){
+  var track=document.getElementById("hcTrack"); if(!track) return;
+  var slides=track.children, n=slides.length, dots=document.getElementById("hcDots"), idx=0, timer=null, stopped=false;
+  var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  for(var i=0;i<n;i++){(function(i){var d=document.createElement("button");d.type="button";d.className="hc-dot";d.setAttribute("aria-label","Show photo "+(i+1));d.addEventListener("click",function(){stop();go(i)});dots.appendChild(d)})(i)}
+  function mark(){for(var i=0;i<n;i++){dots.children[i].setAttribute("aria-current",i===idx?"true":"false")}}
+  function go(i){idx=(i+n)%n;track.scrollTo({left:idx*track.clientWidth,behavior:reduce?"auto":"smooth"});mark()}
+  var t;track.addEventListener("scroll",function(){clearTimeout(t);t=setTimeout(function(){var i=Math.round(track.scrollLeft/track.clientWidth);if(i!==idx){idx=i;mark()}},60)},{passive:true});
+  document.getElementById("hcPrev").addEventListener("click",function(){stop();go(idx-1)});
+  document.getElementById("hcNext").addEventListener("click",function(){stop();go(idx+1)});
+  track.addEventListener("keydown",function(e){if(e.key==="ArrowRight"){e.preventDefault();stop();go(idx+1)}if(e.key==="ArrowLeft"){e.preventDefault();stop();go(idx-1)}});
+  ["pointerdown","touchstart","wheel"].forEach(function(ev){track.addEventListener(ev,stop,{passive:true})});
+  function play(){if(stopped||reduce||timer)return;timer=setInterval(function(){go(idx+1)},5000)}
+  function pause(){clearInterval(timer);timer=null}
+  function stop(){stopped=true;pause()}
+  var car=document.getElementById("heroCarousel");
+  car.addEventListener("mouseenter",pause);car.addEventListener("mouseleave",play);
+  car.addEventListener("focusin",pause);car.addEventListener("focusout",play);
+  document.addEventListener("visibilitychange",function(){document.hidden?pause():play()});
+  window.addEventListener("resize",function(){track.scrollTo({left:idx*track.clientWidth})});
+  mark();play();
 })();
 </script>
 </body>
