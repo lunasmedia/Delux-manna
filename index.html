@@ -84,7 +84,8 @@ section{padding:96px 0;position:relative}
   --edge:max(22px,calc((100vw - var(--max))/2 + 22px));
   /* text sits on photos, so keep it light-on-dark */
   --cream:#f4e8d4;--muted:#e2d5bf;--gold:#e0b257;--gold-text:#f3d697;--gold-soft:rgba(214,164,70,.2);--tint:244,232,212}
-.hero-text{position:relative;z-index:2;color:var(--cream);padding-left:max(0px,calc(60px - var(--edge)))}
+.hero-text{position:relative;z-index:2;color:var(--cream);pointer-events:none;padding-left:max(0px,calc(60px - var(--edge)))}
+.hero-text a,.hero-text button{pointer-events:auto}
 .hero-text h1{text-shadow:0 2px 24px rgba(0,0,0,.35)}
 .hero-text .peak-chip{backdrop-filter:blur(6px)}
 .hero h1{font-size:clamp(2.7rem,6.4vw,5.1rem);margin:18px 0 22px}
@@ -385,6 +386,9 @@ form{display:flex;flex-direction:column;gap:16px}
 .hc-track:focus-visible{outline:2px solid var(--gold);outline-offset:-4px}
 .hc-slide{flex:0 0 100%;height:100%;scroll-snap-align:start;scroll-snap-stop:always;position:relative;margin:0}
 .hc-slide img,.hc-slide video{width:100%;height:100%;object-fit:cover;display:block}
+.hc-video{overflow:hidden}
+.hc-video::before{content:"";position:absolute;inset:-60px;background:url("images/celebrations-poster.jpg") center/cover;filter:blur(36px) brightness(.5) saturate(1.2)}
+.hc-video video{position:absolute;top:50%;transform:translateY(-50%);right:23%;left:auto;width:auto;height:74%;aspect-ratio:9/16;object-fit:cover;border-radius:20px;box-shadow:0 30px 60px -20px rgba(0,0,0,.8),0 0 0 1px rgba(244,232,212,.08)}
 .hc-slide figcaption{position:absolute;right:calc(10% + 4px);bottom:calc(16% + 58px);z-index:2;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:#f4e8d4;background:rgba(0,0,0,.4);padding:6px 11px;border-radius:999px;backdrop-filter:blur(4px)}
 .hc-controls{position:absolute;right:calc(10% + 4px);bottom:16%;gap:18px;display:flex;align-items:center;justify-content:space-between;z-index:2}
 .hc-dots{display:flex;gap:6px}
@@ -400,6 +404,7 @@ form{display:flex;flex-direction:column;gap:16px}
   .hero-carousel{--fx:5%;--fy:7%}
   .hc-controls{left:22px;right:22px;top:26px;bottom:auto;justify-content:space-between}
   .hc-slide figcaption{display:none}
+  .hc-video video{right:50%;transform:translate(50%,-50%);height:70%}
   .hero-text{padding-top:72px}
 }
 
@@ -459,7 +464,7 @@ form{display:flex;flex-direction:column;gap:16px}
             <figcaption>The dining room</figcaption>
           </figure>
           <figure class="hc-slide hc-video" role="group" aria-roledescription="slide" aria-label="2 of 6" data-hold="12000">
-            <video src="videos/celebrations.mp4" poster="images/celebrations-poster.jpg" muted loop playsinline preload="none" aria-label="Guests celebrating with drinks at Deluxe Manna" style="object-position:50% 35%"></video>
+            <video src="videos/celebrations.mp4" poster="images/celebrations-poster.jpg" muted loop playsinline preload="none" aria-label="Guests celebrating with drinks at Deluxe Manna"></video>
             <figcaption>Celebrations</figcaption>
           </figure>
           <figure class="hc-slide" role="group" aria-roledescription="slide" aria-label="3 of 6">
