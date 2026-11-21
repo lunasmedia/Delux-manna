@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <title>Deluxe Manna — Congolese, Pan-African & Caribbean Kitchen · Tottenham</title>
 <meta name="description" content="Family-run Congolese, Pan-African and Caribbean restaurant and cocktail lounge in Tottenham, North London. Book a table, order takeaway or enquire about event catering.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -57,7 +59,9 @@ section{padding:96px 0;position:relative}
 .nav{position:sticky;top:0;z-index:50;background:var(--nav-bg);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;height:72px;gap:20px}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-.logo-mark{width:38px;height:38px;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--gold),var(--terracotta) 70%);display:grid;place-items:center;font-family:var(--serif);font-weight:700;color:#1a120c;font-size:1.05rem}
+.logo-img{height:39px;width:auto;filter:drop-shadow(0 2px 6px rgba(0,0,0,.35))}
+.logo-foot{display:inline-block}
+.logo-foot img{width:180px;height:auto}
 .logo-text{font-family:var(--serif);font-size:1.35rem;font-weight:600;letter-spacing:.01em}
 .logo-text i{color:var(--gold);font-weight:400}
 .nav-links{display:flex;gap:26px;list-style:none}
@@ -407,7 +411,7 @@ form{display:flex;flex-direction:column;gap:16px}
 <header class="nav" id="nav">
   <div class="wrap nav-in">
     <a href="#top" class="logo" aria-label="Deluxe Manna home">
-      <span class="logo-mark" aria-hidden="true">M</span>
+      <img class="logo-img" src="images/logo-mark.png" alt="" width="60" height="39">
       <span class="logo-text">Deluxe <i>Manna</i></span>
     </a>
     <ul class="nav-links">
@@ -724,7 +728,7 @@ form{display:flex;flex-direction:column;gap:16px}
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <a href="#top" class="logo"><span class="logo-mark" aria-hidden="true">M</span><span class="logo-text">Deluxe <i>Manna</i></span></a>
+        <a href="#top" class="logo-foot" aria-label="Deluxe Manna home"><img src="images/logo-full.png" alt="Deluxe Manna — Authentic African &amp; Caribbean Cuisine" width="180" height="151" loading="lazy"></a>
         <p>Family-run Congolese, Pan-African &amp; Caribbean kitchen and cocktail lounge in Tottenham, North London.</p>
       </div>
       <div><h4>Explore</h4><ul><li><a href="#menu">Menu</a></li><li><a href="#platters">Sharing Platters</a></li><li><a href="#lounge">Drinks &amp; Lounge</a></li><li><a href="#faq">FAQ</a></li></ul></div>
