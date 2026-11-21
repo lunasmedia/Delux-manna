@@ -229,6 +229,13 @@ blockquote.story-q{font-family:var(--serif);font-style:italic;font-size:1.3rem;c
 .gr-visit span{margin:0 8px;opacity:.6}
 .gr-text{margin-top:12px;font-size:.95rem;line-height:1.55;color:#e8eaed}
 .gr-more{color:#9aa0a6}
+.gr.reveal{transition:opacity .7s ease,transform .7s ease,translate .3s cubic-bezier(.2,.8,.3,1),border-color .3s,box-shadow .3s,background-color .3s}
+@media (hover:hover){
+  .gr:hover{translate:0 -6px;background-color:#26272a;border-color:rgba(214,164,70,.45);box-shadow:0 18px 40px -18px rgba(0,0,0,.85),0 0 0 1px rgba(214,164,70,.15),0 0 28px -8px rgba(214,164,70,.25)}
+  .gr:hover .gr-name{color:#f3d697}
+  .gr:hover .gr-g{transform:scale(1.12)}
+}
+.gr-name,.gr-g{transition:color .3s,transform .3s}
 .gr-cta{margin-top:4px}
 .gr-cta small{color:var(--muted);font-size:.8rem}
 .themes{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
