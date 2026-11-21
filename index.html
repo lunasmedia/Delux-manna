@@ -384,7 +384,7 @@ form{display:flex;flex-direction:column;gap:16px}
 .hc-track::-webkit-scrollbar{display:none}
 .hc-track:focus-visible{outline:2px solid var(--gold);outline-offset:-4px}
 .hc-slide{flex:0 0 100%;height:100%;scroll-snap-align:start;scroll-snap-stop:always;position:relative;margin:0}
-.hc-slide img{width:100%;height:100%;object-fit:cover;display:block}
+.hc-slide img,.hc-slide video{width:100%;height:100%;object-fit:cover;display:block}
 .hc-slide figcaption{position:absolute;right:calc(10% + 4px);bottom:calc(16% + 58px);z-index:2;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:#f4e8d4;background:rgba(0,0,0,.4);padding:6px 11px;border-radius:999px;backdrop-filter:blur(4px)}
 .hc-controls{position:absolute;right:calc(10% + 4px);bottom:16%;gap:18px;display:flex;align-items:center;justify-content:space-between;z-index:2}
 .hc-dots{display:flex;gap:6px}
@@ -454,23 +454,27 @@ form{display:flex;flex-direction:column;gap:16px}
     <div class="hero-visual">
       <div class="hero-carousel" id="heroCarousel" role="region" aria-roledescription="carousel" aria-label="Photos from Deluxe Manna">
         <div class="hc-track" id="hcTrack" tabindex="0">
-          <figure class="hc-slide" role="group" aria-roledescription="slide" aria-label="1 of 5">
+          <figure class="hc-slide" role="group" aria-roledescription="slide" aria-label="1 of 6">
             <img src="images/dining-table.jpg" alt="Dining room with gold-striped walls, teal velvet booth and a table of shared dishes" fetchpriority="high" style="object-position:50% 62%">
             <figcaption>The dining room</figcaption>
           </figure>
-          <figure class="hc-slide" role="group" aria-roledescription="slide" aria-label="2 of 5">
+          <figure class="hc-slide hc-video" role="group" aria-roledescription="slide" aria-label="2 of 6" data-hold="12000">
+            <video src="videos/celebrations.mp4" poster="images/celebrations-poster.jpg" muted loop playsinline preload="none" aria-label="Guests celebrating with drinks at Deluxe Manna" style="object-position:50% 35%"></video>
+            <figcaption>Celebrations</figcaption>
+          </figure>
+          <figure class="hc-slide" role="group" aria-roledescription="slide" aria-label="3 of 6">
             <img src="images/manna-platter.jpg" alt="The Manna Platter with lamb ribs, grilled meat, glazed wings, plantain, jollof and fried rice" loading="lazy" style="object-position:50% 50%">
             <figcaption>The Manna Platter</figcaption>
           </figure>
-          <figure class="hc-slide" role="group" aria-roledescription="slide" aria-label="3 of 5">
+          <figure class="hc-slide" role="group" aria-roledescription="slide" aria-label="4 of 6">
             <img src="images/ribs-jollof-plantain.jpg" alt="Glazed grilled ribs with jollof rice and fried plantain" loading="lazy" style="object-position:50% 40%">
             <figcaption>Off the grill</figcaption>
           </figure>
-          <figure class="hc-slide" role="group" aria-roledescription="slide" aria-label="4 of 5">
+          <figure class="hc-slide" role="group" aria-roledescription="slide" aria-label="5 of 6">
             <img src="images/grilled-chop-wide.jpg" alt="Pan-seared chop topped with peppers and mushroom sauce" loading="lazy" style="object-position:50% 50%">
             <figcaption>From the kitchen</figcaption>
           </figure>
-          <figure class="hc-slide" role="group" aria-roledescription="slide" aria-label="5 of 5">
+          <figure class="hc-slide" role="group" aria-roledescription="slide" aria-label="6 of 6">
             <img src="images/cocktail.jpg" alt="Tall orange cocktail garnished with pineapple and orange" loading="lazy" style="object-position:50% 45%">
             <figcaption>Cocktails &amp; lounge</figcaption>
           </figure>
@@ -479,8 +483,8 @@ form{display:flex;flex-direction:column;gap:16px}
         <div class="hc-controls">
           <div class="hc-dots" id="hcDots"></div>
           <div class="hc-arrows">
-            <button class="hc-btn" id="hcPrev" type="button" aria-label="Previous photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-            <button class="hc-btn" id="hcNext" type="button" aria-label="Next photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <button class="hc-btn" id="hcPrev" type="button" aria-label="Previous slide"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <button class="hc-btn" id="hcNext" type="button" aria-label="Next slide"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           </div>
         </div>
       <div class="hero-float" aria-hidden="true"><b>4</b><small>Sharing platters<br>serve up to four</small></div>
@@ -1116,16 +1120,17 @@ form{display:flex;flex-direction:column;gap:16px}
   var track=document.getElementById("hcTrack"); if(!track) return;
   var slides=track.children, n=slides.length, dots=document.getElementById("hcDots"), idx=0, timer=null, stopped=false;
   var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  for(var i=0;i<n;i++){(function(i){var d=document.createElement("button");d.type="button";d.className="hc-dot";d.setAttribute("aria-label","Show photo "+(i+1));d.addEventListener("click",function(){stop();go(i)});dots.appendChild(d)})(i)}
-  function mark(){for(var i=0;i<n;i++){dots.children[i].setAttribute("aria-current",i===idx?"true":"false")}}
+  if(reduce){[].forEach.call(track.querySelectorAll("video"),function(v){v.controls=true;v.preload="metadata"})}
+  for(var i=0;i<n;i++){(function(i){var d=document.createElement("button");d.type="button";d.className="hc-dot";d.setAttribute("aria-label","Show slide "+(i+1));d.addEventListener("click",function(){stop();go(i)});dots.appendChild(d)})(i)}
+  function mark(){for(var i=0;i<n;i++){dots.children[i].setAttribute("aria-current",i===idx?"true":"false");var v=slides[i].querySelector("video");if(v){if(i===idx&&!reduce){var pr=v.play();if(pr&&pr.catch)pr.catch(function(){})}else{v.pause()}}}if(timer){pause();play()}}
   function go(i){idx=(i+n)%n;track.scrollTo({left:idx*track.clientWidth,behavior:reduce?"auto":"smooth"});mark()}
   var t;track.addEventListener("scroll",function(){clearTimeout(t);t=setTimeout(function(){var i=Math.round(track.scrollLeft/track.clientWidth);if(i!==idx){idx=i;mark()}},60)},{passive:true});
   document.getElementById("hcPrev").addEventListener("click",function(){stop();go(idx-1)});
   document.getElementById("hcNext").addEventListener("click",function(){stop();go(idx+1)});
   track.addEventListener("keydown",function(e){if(e.key==="ArrowRight"){e.preventDefault();stop();go(idx+1)}if(e.key==="ArrowLeft"){e.preventDefault();stop();go(idx-1)}});
   ["pointerdown","touchstart","wheel"].forEach(function(ev){track.addEventListener(ev,stop,{passive:true})});
-  function play(){if(stopped||reduce||timer)return;timer=setInterval(function(){go(idx+1)},5000)}
-  function pause(){clearInterval(timer);timer=null}
+  function play(){if(stopped||reduce||timer)return;timer=setTimeout(function(){timer=null;go(idx+1);play()},+slides[idx].getAttribute("data-hold")||5000)}
+  function pause(){clearTimeout(timer);timer=null}
   function stop(){stopped=true;pause()}
   var car=document.getElementById("heroCarousel").parentNode;
   car.addEventListener("mouseenter",pause);car.addEventListener("mouseleave",play);
